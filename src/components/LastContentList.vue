@@ -1,14 +1,12 @@
 <template>
   <div
-    v-for="news in processed_newsList"
+    v-for="news in processed_LastContent"
     :key="news"
     class="flex flex-col flex-wrap md:gap-4 gap-2 mt-4"
   >
-    <div
-      class="MostViews_layer_content_part2_item flex flex-row-reverse justify-between w-full rounded-sm"
-    >
+    <div class="LastContent_layer_item flex flex-row-reverse justify-between w-full rounded-sm">
       <a :href="news.href"
-        ><div class="MostViews_layer_content_part2_item_img_container relative flex flex-wrap">
+        ><div class="LastContent_layer_item_img_container relative flex flex-wrap">
           <img
             :alt="news.alt"
             loading="lazy"
@@ -21,7 +19,7 @@
           /></div
       ></a>
 
-      <div class="MostViews_layer_content_part2_item_text relative pl-4 pr-2">
+      <div class="LastContent_layer_item_text relative pl-4 pr-2">
         <a :href="news.href"
           ><span> {{ news.title }} </span></a
         >
@@ -63,42 +61,38 @@
                 ></path></svg
               ><span class="fa"> {{ news.hour }} </span>
             </div>
-            <div class="box__BoxBase-sc-1ww1anb-0 eIbCri">
-              <div class="popover__PopoverWrapper-sc-1p9qk2q-0 hYvurN">
-                <button type="button" class="icon-button__IconButtonBase-sc-1scxe75-0 keUJqZ">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    height="16"
-                    fill="var(--grey-1)"
-                  >
-                    <g fill-rule="evenodd">
-                      <g>
-                        <path
-                          d="M8 6c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zM2 6c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm12 0c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2z"
-                          transform="translate(-1356.000000, -1286.000000) translate(1356.000000, 1286.000000)"
-                        ></path>
-                      </g>
-                    </g>
-                  </svg>
-                </button>
-              </div>
-              <div class="popover__PopoverWrapper-sc-1p9qk2q-0 hYvurN"></div>
-            </div>
+
+            <button type="button" class="icon-button__IconButtonBase-sc-1scxe75-0 keUJqZ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                width="16"
+                height="16"
+                fill="var(--grey-1)"
+              >
+                <g fill-rule="evenodd">
+                  <g>
+                    <path
+                      d="M8 6c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zM2 6c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm12 0c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2z"
+                      transform="translate(-1356.000000, -1286.000000) translate(1356.000000, 1286.000000)"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="MostViews_layer_content_part2_item_devider w-full h-px"></div>
+    <div class="LastContent_layer_item_devider w-full h-px"></div>
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue'
 
-const newsList = [
+const lastContentList = [
   {
     href: '/tech-iran/409318-need-to-cancel-the-iphone-import-ban/',
     alt: 'آیفون ۱۵ پرو مکس / iPhone 15 Pro Max روی میز',
@@ -182,14 +176,57 @@ const newsList = [
 ]
 
 const props = defineProps({
-  news_filter: String
+  LastContent_filter: String
 })
 
-const processed_newsList = computed(() => {
-  var newArray = newsList.filter((news) => {
-    return news.type == props.news_filter
+const processed_LastContent = computed(() => {
+  var newArray = lastContentList.filter((news) => {
+    return news.type == props.LastContent_filter
   })
 
   return newArray
 })
 </script>
+<style>
+.LastContent_layer span.fa {
+  margin: unset;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--grey-1);
+  font-family: 'Vazir-FD', serif;
+}
+.LastContent_layer_item_img_container {
+  width: 140px;
+  height: 140px;
+}
+.LastContent_layer_item_img_container img {
+  box-shadow: rgba(25, 25, 35, 0.15) 0px 1px 3px 0px;
+}
+
+.LastContent_layer_item_text {
+  flex: 1 1 0%;
+}
+.LastContent_layer_item_text span {
+  margin: unset;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--text);
+  font-family: 'Vazir-FD', serif;
+  line-height: 28px;
+  display: block;
+}
+.LastContent_layer_item_text p {
+  margin-top: unset;
+  margin-right: unset;
+  margin-left: unset;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--grey-1);
+  font-family: 'Vazir-FD', serif;
+  line-height: 2;
+  margin-bottom: 7px;
+}
+.LastContent_layer_item_devider {
+  background-color: var(--black-5);
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <swiper-container
-    ref="NewsSwiperRef"
+    ref="SuggestSwiperRef"
     init="false"
     class="swiper-wrapper"
     slides-per-view="4"
@@ -8,10 +8,10 @@
     css-mode="true"
     navigation="true"
   >
-    <swiper-slide class="swiper-slide news-swiper-slide" v-for="myNew in processed_newsList" :key="myNew">
-      <div class="NewsCarousel_Wrapper mb-2 relative">
+    <swiper-slide class="swiper-slide suggest-swiper-slide" v-for="myNew in processed_suggestList" :key="myNew">
+      <div class="suggestCarousel_Wrapper mb-2 relative">
         <router-link :to="myNew.link"
-          ><div class="NewsCarousel_ImageWrapper w-full relative">
+          ><div class="suggestCarousel_ImageWrapper w-full relative">
             <img
               :alt="myNew.alt"
               loading="lazy"
@@ -24,8 +24,8 @@
 
         <div class="p-6 pb-4 flex flex-col justify-between gap-4 w-full">
           <div class="flex flex-nowrap gap-2">
-            <a class="NewsCarousel_Textlink" :href="myNew.link"
-              ><div class="NewsCarousel_Text">
+            <a class="suggestCarousel_Textlink" :href="myNew.link"
+              ><div class="suggestCarousel_Text">
                 {{ myNew.text }}
               </div></a
             >
@@ -48,7 +48,7 @@
                     fill-rule="evenodd"
                     fill-opacity="0"
                   ></path></svg
-                ><span class="NewsCarousel_Num text-xs font-normal">{{ myNew.comments }}</span>
+                ><span class="suggestCarousel_Num text-xs font-normal">{{ myNew.comments }}</span>
               </div>
               <div class="flex flex-row justify-center items-center gap-1">
                 <svg
@@ -62,7 +62,7 @@
                   <path
                     d="M 15 2 L 13 2 L 13 0 L 10 0 L 10 2 L 6 2 L 6 0 L 3 0 L 3 2 L 1 2 C 0.449219 2 0 2.449219 0 3 L 0 15 C 0 15.550781 0.449219 16 1 16 L 15 16 C 15.550781 16 16 15.550781 16 15 L 16 3 C 16 2.449219 15.550781 2 15 2 Z M 14 14 L 2 14 L 2 5 L 14 5 Z M 14 14 "
                   ></path></svg
-                ><span class="NewsCarousel_Num text-xs font-normal">{{ myNew.hour }} ساعت پیش</span>
+                ><span class="suggestCarousel_Num text-xs font-normal">{{ myNew.hour }} ساعت پیش</span>
               </div>
             </div>
             <div class="">
@@ -145,7 +145,7 @@ const params = {
   ]
 }
 
-const news = [
+const suggests = [
   {
     link: '/os/409227-ios-ipados-17-released-iphone-ipad-download/',
     alt: 'قابلیت پوستر iOS 17 روی آیفون ۱۳ پرو مکس',
@@ -256,9 +256,9 @@ const news = [
   }
 ]
 
-const processed_newsList = computed(() => {
-  var newArray = news.filter((news) => {
-    return news.type == props.suggest_filter
+const processed_suggestList = computed(() => {
+  var newArray = suggests.filter((suggest) => {
+    return suggest.type == props.suggest_filter
   })
 
   return newArray
@@ -266,7 +266,7 @@ const processed_newsList = computed(() => {
 
 onMounted(() => {
   const instance = getCurrentInstance()
-  const swiperContainer = instance.refs.NewsSwiperRef
+  const swiperContainer = instance.refs.SuggestSwiperRef
   console.log(swiperContainer)
   Object.assign(swiperContainer, params)
   swiperContainer.initialize()
@@ -274,17 +274,17 @@ onMounted(() => {
 </script>
 
 <style>
-.news-swiper-slide {
+.suggest-swiper-slide {
   padding-left: 25px;
 }
 
-.NewsCarousel_Wrapper {
+.suggestCarousel_Wrapper {
   border-radius: 3px;
   background-color: var(--card);
   box-shadow: 0 1px 3px 0 var(--elevation);
 }
 
-.NewsCarousel_Text {
+.suggestCarousel_Text {
   margin: unset;
   font-size: 14px;
   font-weight: bold;
@@ -297,15 +297,15 @@ onMounted(() => {
   overflow: hidden;
 }
 
-.NewsCarousel_ImageWrapper {
+.suggestCarousel_ImageWrapper {
   aspect-ratio: 3 / 2;
 }
 
-.NewsCarousel_Text:hover {
+.suggestCarousel_Text:hover {
   color: var(--text-hover);
 }
 
-.NewsCarousel_Num {
+.suggestCarousel_Num {
   color: var(--grey-1);
   font-family: "Vazir-FD" !important;
 }

@@ -45,3 +45,22 @@ const articleList = [
   }
 ]
 </script>
+<style>
+.ArticleListShowCase:first-child {
+  aspect-ratio: 3 / 2;
+}
+.ArticleListShowCase_Detail {
+  background-color: rgba(25, 25, 35, 0.5);
+}
+.ArticleListShowCase_Detail_text {
+  margin: unset;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--white);
+  line-height: 1.8;
+}
+
+.ArticleListShowCase:hover .ArticleListShowCase_cover {
+  transform: scale(1.1);
+}
+</style>
