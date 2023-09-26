@@ -1,0 +1,52 @@
+[
+  {
+    "href" : "/mobile/",
+        "title" : " گوشی موبایل"
+  },
+  {
+    "href" : "/tablet/",
+        "title" : "تبلت"
+  },
+  {
+    "href" : "/laptop/",
+        "title" : "لپ‌تاپ"
+  },
+     {
+      "href" : "/tv/",
+        "title" : "تلویزیون"
+     },
+  {
+    "href" : "/wearables/",
+        "title" : "ساعت و دستنبد هوشمند"
+  },
+  
+  {
+    "href" : "/hardware/",
+        "title" : "سخت افزار"
+  },
+  {
+    "href" : "/tech-iran/",
+        "title" : "فناوری ایران"
+  }
+  
+   ,{
+    "href" : "/software-application/",
+        "title" : "نرم افزار و اپلیکیشن"
+   }  
+     ,{
+      "href" : "/os/",
+        "title" : " سیستم عامل"
+     }
+  ,{
+    "href" : "/internet-network/",
+        "title" : "اینترنت و شبکه"
+  },
+  {
+    "href" : "/gaming/",
+        "title" : " بازی"
+  },
+  {
+    "href" : "/cryptocurrency/",
+        "title" : "ارز دیجیتال"
+  }
+  ]

@@ -5,8 +5,7 @@
       :class="{ 'header-bg': !transparentHeader, 'header-gradiant': transparentHeader }"
     >
       <div class="flex flex-wrap items-center">
-        <router-link :to="{ name: 'home' }" class="flex"
-          >
+        <router-link :to="{ name: 'home' }" class="flex">
           <svg width="106" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 25.16">
             <g id="Layer_2" data-name="Layer 2">
               <g id="Layer_1-2" data-name="Layer 1">
@@ -62,7 +61,11 @@
             </div>
           </button>
           <ul class="flex items-center relative list-none py-2">
-            <router-link :to="{ name: 'home' }"
+            <router-link
+              :to="{ name: 'home' }"
+              @mousemove="hoverSubmenuIndex = 0"
+              @mouseleave="hoverSubmenuIndex = -1"
+              :class="{ active: hoverSubmenuIndex == 0 }"
               ><li class="px-4 relative">
                 <button
                   class="flex justify-center items-center gap-1 cursor-pointer w-full h-full border-0 outline-0 py-0.5 px-1.5 gap-1"
@@ -77,11 +80,36 @@
                     <path
                       d="M3.75 0L2.25 0 2.25 2.25 0 2.25 0 3.75 2.25 3.75 2.25 6 3.75 6 3.75 3.75 6 3.75 6 2.25 3.75 2.25z"
                     ></path></svg
-                  ><span class="MenuDesktop_itemText text-sm font-black">محصولات</span>
+                  ><span class="MenuDesktop_itemText text-sm font-black"> محصولات</span>
                 </button>
-              </li></router-link
+              </li>
+              <div
+                v-show="hoverSubmenuIndex == 0"
+                :index="hoverSubmenuIndex"
+                class="MenuDesktop_TransparentDiv absolute top-6 z-10 py-3 px-px pb-px"
+                :style="`right: ${hoverSubmenuIndex * 90}px`"
+              >
+                <div class="MenuDesktop_SubCategoryWrapper">
+                  <div class="MenuDesktop_SubCategoryList">
+                    <div
+                      class="MenuDesktop_SubCategoryItem"
+                      v-for="item in submenuItems0"
+                      :key="item"
+                    >
+                      <a :href="item.href"
+                        ><span> {{ item.title }} </span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div></router-link
             >
-            <router-link :to="{ name: 'home' }"
+
+            <router-link
+              :to="{ name: 'home' }"
+              @mousemove="hoverSubmenuIndex = 1"
+              @mouseleave="hoverSubmenuIndex = -1"
+              :class="{ active: hoverSubmenuIndex == 1 }"
               ><li class="px-4 relative">
                 <button
                   class="flex justify-center items-center gap-1 cursor-pointer w-full h-full border-0 outline-0 py-0.5 px-1.5 gap-1"
@@ -98,7 +126,27 @@
                     ></path></svg
                   ><span class="MenuDesktop_itemText text-sm font-black">فناوری</span>
                 </button>
-              </li></router-link
+              </li>
+              <div
+                v-show="hoverSubmenuIndex == 1"
+                :index="hoverSubmenuIndex"
+                class="MenuDesktop_TransparentDiv absolute top-6 z-10 py-3 px-px pb-px"
+                :style="`right: ${hoverSubmenuIndex * 90}px`"
+              >
+                <div class="MenuDesktop_SubCategoryWrapper">
+                  <div class="MenuDesktop_SubCategoryList">
+                    <div
+                      class="MenuDesktop_SubCategoryItem"
+                      v-for="item in submenuItems1"
+                      :key="item"
+                    >
+                      <a :href="item.href"
+                        ><span> {{ item.title }} </span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div></router-link
             >
             <router-link :to="{ name: 'home' }"
               ><li class="px-4 relative">
@@ -127,7 +175,11 @@
                 </button>
               </li></router-link
             >
-            <router-link :to="{ name: 'home' }"
+            <router-link
+              :to="{ name: 'home' }"
+              @mousemove="hoverSubmenuIndex = 5"
+              @mouseleave="hoverSubmenuIndex = -1"
+              :class="{ active: hoverSubmenuIndex == 5 }"
               ><li class="px-4 relative">
                 <button
                   class="flex justify-center items-center gap-1 cursor-pointer w-full h-full border-0 outline-0 py-0.5 px-1.5 gap-1"
@@ -144,8 +196,32 @@
                     ></path></svg
                   ><span class="MenuDesktop_itemText text-sm font-black">زومیت</span>
                 </button>
-              </li></router-link
+              </li>
+              <div
+                v-show="hoverSubmenuIndex == 5"
+                :index="hoverSubmenuIndex"
+                class="MenuDesktop_TransparentDiv absolute top-6 z-10 py-3 px-px pb-px"
+                :style="`right: ${hoverSubmenuIndex * 90}px`"
+              >
+                <div class="MenuDesktop_SubCategoryWrapper">
+                  <div class="MenuDesktop_SubCategoryList list-5">
+                    <div
+                      class="MenuDesktop_SubCategoryItem"
+                      v-for="item in submenuItems5"
+                      :key="item"
+                    >
+                      <a :href="item.href"
+                        ><span> {{ item.title }} </span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div></router-link
             >
+
+            <!--  -->
+
+            <!--  -->
           </ul>
 
           <button
@@ -267,9 +343,16 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import submenuItems0Array from '../assets/jsons/submenuItems0Array.json'
+import submenuItems1Array from '../assets/jsons/submenuItems1Array.json'
+import submenuItems5Array from '../assets/jsons/submenuItems5Array.json'
 
 const transparentHeader = ref(true)
 const theme = ref('light')
+const hoverSubmenuIndex = ref(-1)
+const submenuItems0 = submenuItems0Array
+const submenuItems1 = submenuItems1Array
+const submenuItems5 = submenuItems5Array
 
 watch(theme, (newThem) => {
   setTheme(newThem)
@@ -322,7 +405,8 @@ header.header-bg .MenuDesktop_svgContainer {
 header .MenuDesktop_svgContainer {
   background-color: var(--white);
 }
-header .MenuDesktop_itemText:hover {
+header ul a.active .MenuDesktop_itemText,
+header ul a:hover .MenuDesktop_itemText {
   color: var(--text-hover);
 }
 
@@ -376,5 +460,37 @@ nav {
 .ToggleTheme label.active {
   background-color: var(--white);
   box-shadow: 0 0 2pt 1pt var(--elevation);
+}
+
+.MenuDesktop_SubCategoryWrapper {
+  background-color: var(--card);
+  border-radius: 10px;
+  box-shadow: rgba(25, 25, 35, 0.08) 0px 0px 16px 0px;
+  height: auto;
+}
+.MenuDesktop_SubCategoryList {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-auto-flow: column;
+  gap: 0px 32px;
+  padding: 10px;
+  text-align: right;
+}
+.MenuDesktop_SubCategoryList.list-5 {
+  grid-template-rows: repeat(3, 1fr);
+}
+.MenuDesktop_SubCategoryItem {
+  padding: 8px;
+}
+.MenuDesktop_SubCategoryItem > a > span:hover {
+  color: var(--text-hover);
+}
+
+.MenuDesktop_SubCategoryItem > a > span {
+  display: block;
+  margin: unset;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--text);
 }
 </style>

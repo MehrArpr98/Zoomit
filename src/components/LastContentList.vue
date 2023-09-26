@@ -91,89 +91,10 @@
 
 <script setup>
 import { computed } from 'vue'
+import LastContentArray from '../assets/jsons/LastContentArray.json'
 
-const lastContentList = [
-  {
-    href: '/tech-iran/409318-need-to-cancel-the-iphone-import-ban/',
-    alt: 'آیفون ۱۵ پرو مکس / iPhone 15 Pro Max روی میز',
-    src: 'https://api2.zoomit.ir/media/iphone-15-pro-and-max-review-one-6509b2e7746b0421ae9b652c?w=250&amp;q=75',
-    title: 'نماینده مجلس: مجلس باید مقابل ممنوعیت واردات آیفون بایستد',
-    desc: 'جلال رشیدی کوچی می‌گوید با ممنوعیت اعمال‌شده از سوی وزارت صمت برای واردات آیفون همان اتفاقی که برای خودرو افتاد برای گوشی‌ها هم در حال رخ دادن است.',
-    comments: 0,
-    hour: '15 دقیقه پیش',
-    type: 'newest'
-  },
-  {
-    href: '/health-medical/409313-neuralink-recruiting-subjects-human-trial/',
-    alt: 'تراشه مغز کامپیوتر نورالینک در دست',
-    src: 'https://api2.zoomit.ir/media/neuralink-n1-brain-computer-chip-in-hand-650a936b746b0421ae9b667b?w=250&amp;q=75',
-    title: 'ایلان ماسک به‌زودی این تراشه را وارد مغز افراد معلول می‌کند',
-    desc: 'شرکت نورالینک هم‌اکنون به‌دنبال افرادی می‌گردد که بیشتر از ۲۲ سال سن دارند و به فلج چهار اندام مبتلا هستند.',
-    comments: 4,
-    hour: '44 دقیقه پیش',
-    type: 'most_conv'
-  },
-  {
-    href: '/os/409316-samsung-galaxy-s22-plus-ultra-one-ui-6-beta/',
-    alt: 'بازدید از سایت زومیت با گلکسی S22 پلاس',
-    src: 'https://api2.zoomit.ir/media/2022-2-samsung-galaxy-s22-plus-zoomit-638bb6dd8b369136d458b79a?w=250&amp;q=75',
-    title: 'سامسونگ بتای اندروید ۱۴ را برای گلکسی S22 منتشر کرد',
-    desc: '  سامسونگ سرانجام نسخه‌ی بتای One UI 6 (مبتنی‌بر اندروید ۱۴) را برای گوشی‌های سری گلکسی S22 منتشر کرد.',
-    comments: 7,
-    hour: '1 ساعت پیش',
-    type: 'newest'
-  },
-  {
-    href: '/tech-iran/409032-ranking-of-data-centers/',
-    alt: 'مراکز داده مایکروسافت Azure',
-    src: 'https://api2.zoomit.ir/media/2022-7-microsoft-azure-638bb7ec154ec95275182680?w=250&amp;q=75',
-    title: 'پیش‌نویس اصلاحیه مصوبه رتبه‌بندی مراکز داده؛ نفوذ سازمان فناوری اطلاعات بر دیتاسنترها',
-    desc: ' اصلاحات مصوبه ۲۴۷، نفوذ سازمان فناوری ارتباطات را روی مراکز داده بیشتر کرده و به نظر نمی‌رسد رتبه‌بندی دیگر امری تشویقی باشد.',
-    comments: 3,
-    hour: '1 ساعت پیش',
-    type: 'newest'
-  },
-  {
-    href: '/tech-iran/409223-view-and-pay-the-irancell-bill/',
-    alt: 'کاور پرداخت قبض ایرانسل',
-    src: 'https://api2.zoomit.ir/media/irancell-bill-650984a5746b0421ae9b64b2?w=250&amp;q=75',
-    title: 'پرداخت قبض ایرانسل؛ مشاهده قبض ایرانسل دائمی',
-    desc: ' مشاهده و پرداخت قبض تلفن به سادگی و به صورت آنلاین ممکن است. در این مقاله روش‌های مختلف مشاهده و پرداخت قبض ایرانسل را برایتان توضیح داده‌ایم.',
-    comments: 0,
-    hour: '2 ساعت پیش',
-    type: 'iran'
-  },
-  {
-    href: '/tech-iran/409032-ranking-of-data-centers/',
-    alt: 'مراکز داده مایکروسافت Azure',
-    src: 'https://api2.zoomit.ir/media/2022-7-microsoft-azure-638bb7ec154ec95275182680?w=250&amp;q=75',
-    title: 'پیش‌نویس اصلاحیه مصوبه رتبه‌بندی مراکز داده؛ نفوذ سازمان فناوری اطلاعات بر دیتاسنترها',
-    desc: ' اصلاحات مصوبه ۲۴۷، نفوذ سازمان فناوری ارتباطات را روی مراکز داده بیشتر کرده و به نظر نمی‌رسد رتبه‌بندی دیگر امری تشویقی باشد.',
-    comments: 3,
-    hour: '1 ساعت پیش',
-    type: 'most_conv'
-  },
-  {
-    href: '/health-medical/409311-zuckerberg-philanthropy-project-ai-life-sciences-research/',
-    alt: 'مارک زاکربرگ و همسرش پریسیلا چان در کنفرانس مطبوعاتی',
-    src: 'https://api2.zoomit.ir/media/mark-zuckerberg-wifer-press-conference-650a8671746b0421ae9b6669?w=250&amp;q=75',
-    title: 'زاکربرگ با هوش مصنوعی رفتار تمام سلول‌های بدن را پیش‌بینی می‌کند',
-    desc: 'مارک زاکربرگ و همسرش می‌خواهند با بهره‌گیری از هوش مصنوعی، تحقیقات حوزه‌ی علوم زیستی را بسیار پیشرفته‌تر کنند.',
-    comments: 2,
-    hour: '3 ساعت پیش',
-    type: 'science'
-  },
-  {
-    href: '/shutter/401489-farmland-mitch-rouse-aerial-photography/',
-    alt: 'عکس‌های هوایی خیره‌کننده از کشتزارهای خوش‌رنگ و لعاب غربی',
-    src: 'https://api2.zoomit.ir/media/mitchell-rouse-farmland-cover-63cd7112255132ee1d11ab9f?w=250&amp;q=75',
-    title: 'عکس‌های هوایی خیره‌کننده از کشتزارهای خوش‌رنگ و لعاب غربی',
-    desc: ' مجموعه «کشتزار» اثری از هنرمند علاقه‌مند به مکان‌های صنعتی است که از زمان انتشار تاکنون با استقبال بی‌نظیری در فضای مجازی مواجه شده است.',
-    comments: 2,
-    hour: '3 ساعت پیش',
-    type: 'science'
-  }
-]
+const lastContentList = LastContentArray;
+
 
 const props = defineProps({
   LastContent_filter: String
@@ -225,6 +146,12 @@ const processed_LastContent = computed(() => {
   font-family: 'Vazir-FD', serif;
   line-height: 2;
   margin-bottom: 7px;
+
+  display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .LastContent_layer_item_devider {
   background-color: var(--black-5);

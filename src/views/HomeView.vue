@@ -116,15 +116,29 @@
                   <div class="flex flex-col flex-nowrap justify-end gap-12">
                     <div class="MostViews_layer mb-4">
                       <div class="mb-8 pr-4">
-                        <div class="MostViews_layer_title relative">
+                        <div class="ThreeNews_layer_title relative">
                           <span font-size="1.6" font-weight="900">پربازدیدترین مطالب</span>
                         </div>
                       </div>
 
                       <div
-                        class="MostViews_layer_cards flex gap-4 overflow-x-auto w-full py-0 px-4"
+                        class="ThreeNews_layer_cards flex gap-4 overflow-x-auto w-full py-0 px-4"
                       >
-                        <most-views-card />
+                        <three-news-card :cards="MostViews_cards" />
+                      </div>
+                    </div>
+
+                    <div class="Checkeds_layer mb-4">
+                      <div class="mb-8 pr-4">
+                        <div class="ThreeNews_layer_title relative">
+                          <span font-size="1.6" font-weight="900"> بررسی‌ها</span>
+                        </div>
+                      </div>
+
+                      <div
+                        class="ThreeNews_layer_cards flex gap-4 overflow-x-auto w-full py-0 px-4"
+                      >
+                        <three-news-card :cards="Checkeds_cards" />
                       </div>
                     </div>
                   </div>
@@ -197,8 +211,10 @@ import ProductsSwiper from '../components/ProductsSwiper.vue'
 import SuggestSwiper from '../components/SuggestSwiper.vue'
 import ArticleList from '../components/ArticleList.vue'
 import LastContentList from '../components/LastContentList.vue'
-import MostViewsCard from '../components/MostViewsCard.vue'
+import ThreeNewsCard from '../components/ThreeNewsCard.vue'
 import { ref } from 'vue'
+import MostViewsCardsArray from '../assets/jsons/MostViewsCardsArray.json'
+import CheckedsCardsArray from '../assets/jsons/CheckedsCardsArray.json'
 
 const suggest_filter = ref('text')
 const LastContent_filter = ref('newest')
@@ -230,6 +246,11 @@ const LastContent_layer_buttons = ref([
     text: 'پربحث‌ترین‌'
   }
 ])
+
+
+const MostViews_cards = MostViewsCardsArray
+const Checkeds_cards = CheckedsCardsArray
+
 </script>
 
 <style>
@@ -255,7 +276,7 @@ const LastContent_layer_buttons = ref([
 
 .Products_layer_title::before,
 .Suggest_layer_title::before,
-.MostViews_layer_title::before {
+.ThreeNews_layer_title::before {
   content: '';
   position: absolute;
   width: 4px;
@@ -267,7 +288,7 @@ const LastContent_layer_buttons = ref([
 
 .Products_layer_title span,
 .Suggest_layer_title h2,
-.MostViews_layer_title span {
+.ThreeNews_layer_title span {
   margin: unset;
   font-size: 16px;
   font-weight: bold;
@@ -350,7 +371,7 @@ const LastContent_layer_buttons = ref([
   .Suggest_layer_container {
     max-width: 100%;
   }
-  .MostViews_layer_cards {
+  .ThreeNews_layer_cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow-x: initial;
