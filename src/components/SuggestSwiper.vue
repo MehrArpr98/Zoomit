@@ -14,7 +14,7 @@
       :key="myNew"
     >
       <div class="suggestCarousel_Wrapper mb-2 relative">
-        <router-link :to="myNew.link"
+        <a :href="myNew.link"
           ><div class="suggestCarousel_ImageWrapper w-full relative">
             <img
               :alt="myNew.alt"
@@ -24,7 +24,7 @@
               class="object-cover rounded-t absolute w-full h-full inset-0"
               :src="myNew.src"
             /></div
-        ></router-link>
+        ></a>
 
         <div class="p-6 pb-4 flex flex-col justify-between gap-4 w-full">
           <div class="flex flex-nowrap gap-2">
@@ -121,6 +121,7 @@ const params = {
   width: calc(100% - 96px);
   margin: 0 auto;
 }
+
 .swiper-button-next {
   border-right: 1px var(--black-5) solid;
   top: 22px;
@@ -159,7 +160,7 @@ const processed_suggestList = computed(() => {
 onMounted(() => {
   const instance = getCurrentInstance()
   const swiperContainer = instance.refs.SuggestSwiperRef
-  console.log(swiperContainer)
+
   Object.assign(swiperContainer, params)
   swiperContainer.initialize()
 })
@@ -168,6 +169,7 @@ onMounted(() => {
 <style>
 .suggest-swiper-slide {
   padding-left: 25px;
+  width: calc(25% + 6px) !important;
 }
 
 .suggestCarousel_Wrapper {

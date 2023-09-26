@@ -9,7 +9,7 @@
     navigation="true"
   >
     <swiper-slide class="swiper-slide" v-for="product in products" :key="product">
-      <router-link class="ProductCarousel_link" :to="product.link"
+      <a class="ProductCarousel_link" :href="product.link"
         ><div class="ProductCarousel_Wrapper flex flex-col flex-wrap justify-center items-center">
           <div class="ProductCarousel_IconWrapper">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 80">
@@ -17,7 +17,7 @@
             </svg>
           </div>
           <span class="ProductCarousel_Text">{{ product.text }}</span>
-        </div></router-link
+        </div></a
       >
     </swiper-slide>
   </swiper-container>
@@ -70,7 +70,7 @@ const products = ProductsArray
 onMounted(() => {
   const instance = getCurrentInstance()
   const swiperContainer = instance.refs.ProductsSwiperRef
-  console.log(swiperContainer)
+
   Object.assign(swiperContainer, params)
   swiperContainer.initialize()
 })

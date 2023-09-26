@@ -25,12 +25,12 @@
 
               <span class="mr-0 md:mr-4 Products_layer_Desc"
                 >زومیت شما را برای انتخاب بهتر و خرید ارزان‌تر راهنمایی می‌کند</span
-              ><router-link
+              ><a
                 variant="contained"
                 colorscheme="default"
                 target="_blank"
                 class="Products_layer_link py-2 px-4 flex justify-center items-center cursor-pointer border-0 w-fit h-fit text-xs font-black"
-                to="/product/"
+                href="/product/"
               >
                 <div class="flex flex-row justify-center items-center gap-4">
                   ورود به بخش محصولات<svg
@@ -45,7 +45,7 @@
                       transform="translate(-844 -1003) translate(844 1003) rotate(-180 8 8)"
                     ></path>
                   </svg></div
-              ></router-link>
+              ></a>
             </div>
           </div>
           <div size="12" class="Products_layer_container_col2">
@@ -108,7 +108,7 @@
     <div class="ComplexTwoCol_layer">
       <div class="ComplexTwoCol_layer_container mt-4 md:mt-6">
         <div class="mx-auto w-full md:px-12">
-          <div class="ComplexTwoCol_layer_content flex flex-column-reverse">
+          <div class="ComplexTwoCol_layer_content flex flex-col-reverse">
             <!-- ComplexTwoCol_layer_content col right  -->
             <div class="ComplexTwoCol_layer_content_col_right mt-8 pl-0">
               <div class="sticky top-20">
