@@ -33,18 +33,8 @@
                 href="/product/"
               >
                 <div class="flex flex-row justify-center items-center gap-4">
-                  ورود به بخش محصولات<svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    width="12"
-                    height="12"
-                    fill="var(--primary-1)"
-                  >
-                    <path
-                      d="M9.3 1.3L7.9 2.7 12.2 7 0 7 0 9 12.2 9 7.9 13.3 9.3 14.7 16 8z"
-                      transform="translate(-844 -1003) translate(844 1003) rotate(-180 8 8)"
-                    ></path>
-                  </svg></div
+                  ورود به بخش محصولات
+                  <img src="../assets/svgs/arrow-left.svg" alt="arrow-left-img" /></div
               ></a>
             </div>
           </div>
@@ -187,18 +177,8 @@
                       class="view_more flex justify-start items-center font-bold text-xs w-auto h-auto py-1 px-4 pr-0 mt-4 border-0 cursor-pointer"
                       href="/archive/?sort=Newest&amp;skip=20"
                       ><div class="flex flex-row flex-nowrap gap-2 justify-center items-center">
-                        مشاهده مطالب بیشتر<svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          width="12"
-                          height="12"
-                          fill="var(--primary-1)"
-                        >
-                          <path
-                            d="M9.3 1.3L7.9 2.7 12.2 7 0 7 0 9 12.2 9 7.9 13.3 9.3 14.7 16 8z"
-                            transform="translate(-844 -1003) translate(844 1003) rotate(-180 8 8)"
-                          ></path>
-                        </svg></div
+                        مشاهده مطالب بیشتر
+                        <img src="../assets/svgs/arrow-left.svg" alt="arrow-left-img" /></div
                     ></a>
                   </div>
                 </div>
@@ -217,6 +197,16 @@
               <div class="Suggest_layer_title relative">
                 <h2 font-size="1.6" font-weight="900">پیشنهاد زومیت</h2>
               </div>
+              <a
+                variant="text"
+                colorscheme="default"
+                class="view_more flex justify-start items-center font-bold text-xs w-auto h-auto py-1 px-4 pr-0 mt-4 border-0 cursor-pointer"
+                href="/archive/?sort=MostVisited&readingTimeRange=All&publishPeriod=LastMonth&skip=8"
+                ><div class="flex flex-row flex-nowrap gap-2 justify-center items-center">
+                  مشاهده همه
+                  <img src="../assets/svgs/arrow-left.svg" alt="arrow-left-img" />
+                </div>
+              </a>
             </div>
             <div class="w-full mt-4 md:mt-8 md:px-12">
               <div class="relative">
@@ -260,10 +250,10 @@
       </div>
     </div>
   </main>
+
 </template>
 
 <script setup>
-
 import SuggestsArray from '../assets/jsons/SuggestsArray.json'
 import ProductsArray from '../assets/jsons/ProductsArray.json'
 import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
@@ -274,7 +264,6 @@ import ThreeNewsCard from '../components/ThreeNewsCard.vue'
 import { ref } from 'vue'
 import MostViewsCardsArray from '../assets/jsons/MostViewsCardsArray.json'
 import CheckedsCardsArray from '../assets/jsons/CheckedsCardsArray.json'
-
 
 const suggest_filter = ref('text')
 const LastContent_filter = ref('newest')
@@ -332,7 +321,7 @@ const Zoomit_Suggest_layer_buttons = ref([
   {
     val: 'shater',
     text: 'شاتر'
-  },
+  }
 ])
 const MostViews_cards = MostViewsCardsArray
 const Checkeds_cards = CheckedsCardsArray
@@ -429,7 +418,7 @@ const Checkeds_cards = CheckedsCardsArray
   font-family: 'Sahel-FD';
 }
 
-.LastContent_layer .view_more {
+.view_more {
   color: var(--button--text--default-text);
 }
 

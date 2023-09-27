@@ -6,12 +6,9 @@
     >
       <div class="flex flex-wrap items-center">
         <router-link :to="{ name: 'home' }" class="flex">
-          <img
-            v-if="themeStore.theme === 'light' && !transparentHeader"
-            src="../assets/svgs/logo-light.svg"
-            alt="logo-light-img"
-          />
-          <img v-else src="../assets/svgs/logo-dark.svg" alt="logo-dark-img" />
+          <svg width="106" height="20">
+            <use href="../assets/svgs/logo.svg#svg" id="logo_icon" />
+          </svg>
         </router-link>
         <nav class="flex flex-nowrap items-center whitespace-nowrap">
           <button
@@ -190,7 +187,6 @@
                 </div>
               </div></router-link
             >
-
           </ul>
 
           <button
@@ -292,17 +288,8 @@
           </div>
         </div>
         <button type="button" class="icon-button__IconButtonBase-sc-1scxe75-0 keUJqZ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            width="24"
-            height="24"
-            fill="var(--grey-1)"
-          >
-            <path
-              d="M8 0c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8zm0 1.333C4.324 1.333 1.333 4.324 1.333 8c0 1.958.854 3.716 2.203 4.937.443-1.316 1.665-2.27 3.13-2.27h2.667c1.466 0 2.69.954 3.132 2.269 1.348-1.22 2.202-2.979 2.202-4.936 0-3.676-2.991-6.667-6.667-6.667zM8 4c1.104 0 2 .995 2 2.222v.556C10 8.005 9.104 9 8 9s-2-.995-2-2.222v-.556C6 4.995 6.896 4 8 4z"
-              transform="translate(-716 -1131) translate(716 1131)"
-            ></path>
+          <svg width="24" height="24">
+            <use href="../assets/svgs/user.svg#svg" id="user_icon" />
           </svg>
         </button>
       </div>
@@ -454,5 +441,15 @@ nav {
   font-size: 14px;
   font-weight: normal;
   color: var(--text);
+}
+
+#user_icon {
+  fill: var(--grey-1);
+}
+#logo_icon {
+  fill: var(--header--zoomit-typography);
+}
+header.header-gradiant #logo_icon {
+  fill: white;
 }
 </style>

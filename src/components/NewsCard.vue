@@ -18,7 +18,9 @@
             </span>
           </div>
           <div class="flex flex-wrap justify-center items-center gap-1">
-            <img src="../assets/svgs/calendar.svg" alt="calendar-img" />
+            <svg width="12" height="12">
+                <use href="../assets/svgs/calendar.svg#svg" id="whitCalendar_icon" />
+              </svg>
            <span class="ThreeNews_layer_ArticleImageCard_footerRight fa">
               {{ item.dateRelease }}
             </span>
@@ -87,6 +89,9 @@
   font-weight: normal;
   color: var(--white);
   font-family: 'Vazir-FD';
+}
+#whitCalendar_icon{
+  fill: var(--white);
 }
 
 @media (min-width: 768px) {

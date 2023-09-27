@@ -68,21 +68,20 @@
           <p class="m-0 mb-8">خانواده ما</p>
           <div class="flex flex-wrap justify-between">
             <a target="_blank" rel="nofollow" href="https://zoomit.ir" class="pt-1">
-              <img
-                v-if="themeStore.theme === 'light'"
-                src="../assets/svgs/zoomit-light.svg"
-                alt="zoomit-light-img"
-              />
-              <img v-else src="../assets/svgs/zoomit-dark.svg" alt="zoomit-dark-img" />
+              <svg width="106" height="20">
+                <use href="../assets/svgs/zoomit.svg#svg" id="col_2_icon" />
+              </svg>
             </a>
 
             <a target="_blank" rel="nofollow" href="https://zoomg.ir">
-              <img
-                v-if="themeStore.theme === 'light'"
-                src="../assets/svgs/zoomg-light.svg"
-                alt="zoomg-light-img"
-              />
-              <img v-else src="../assets/svgs/zoomg-dark.svg" alt="zoomg-dark-img" />
+              <svg width="110" height="32">
+                <use
+                  v-if="themeStore.theme === 'light'"
+                  href="../assets/svgs/zoomg-light.svg#svg"
+                />
+                <use v-else href="../assets/svgs/zoomg-dark.svg#svg" />
+              </svg>
+              
             </a>
 
             <a
@@ -90,21 +89,19 @@
               rel="nofollow"
               href="https://www.kojaro.com/?utm_source=zoomit&amp;utm_medium=footer&amp;utm_campaign=footerlink"
             >
-              <img
-                v-if="themeStore.theme === 'light'"
-                src="../assets/svgs/kojaro-light.svg"
-                alt="kojaro-light-img"
-              />
-              <img v-else src="../assets/svgs/kojaro-dark.svg" alt="kojaro-dark-img" />
+              <svg width="110" height="32">
+                <use
+                  v-if="themeStore.theme === 'light'"
+                  href="../assets/svgs/kojaro-light.svg#svg"
+                />
+                <use v-else href="../assets/svgs/kojaro-dark.svg#svg" />
+              </svg>
             </a>
 
             <a target="_blank" rel="nofollow" href="https://pedal.ir">
-              <img
-                v-if="themeStore.theme === 'light'"
-                src="../assets/svgs/pedal-light.svg"
-                alt="pedal-light-img"
-              />
-              <img v-else src="../assets/svgs/pedal-dark.svg" alt="pedal-dark-img" />
+              <svg width="110" height="32">
+                <use href="../assets/svgs/pedal.svg#svg" id="col_2_icon" />
+              </svg>
             </a>
           </div>
         </div>
@@ -206,7 +203,9 @@ const themeStore = useThemeStore()
 .z-text {
   fill: var(--z-text);
 }
-
+#col_2_icon {
+  fill: var(--text);
+}
 @media (min-width: 576px) {
   .Footer_FooterContainer {
     max-width: 540px;

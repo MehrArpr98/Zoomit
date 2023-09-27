@@ -23,38 +23,27 @@
         <a :href="news.href"
           ><span> {{ news.title }} </span></a
         >
-        <p>
-          {{ news.desc }}
-        </p>
+        <p>{{ news.desc }}</p>
 
         <div class="absolute bottom-0 flex flex-wrap justify-between">
           <div class="flex flex-wrap justify-center items-center gap-4">
             <div class="flex flex-wrap justify-center items-center gap-1">
-              <img
-                v-if="themeStore.theme === 'light' && !transparentHeader"
-                src="../assets/svgs/comment-light.svg"
-                alt="comment-light-img"
-              />
-              <img v-else src="../assets/svgs/comment-dark.svg" alt="comment-dark-img" />
+              <svg width="12" height="12">
+                <use href="../assets/svgs/comment.svg#svg" id="comment_icon" />
+              </svg>
               <span class="fa">{{ news.comments }}</span>
             </div>
             <div class="flex flex-wrap justify-center items-center gap-1">
-              
-              <img
-                v-if="themeStore.theme === 'light' && !transparentHeader"
-                src="../assets/svgs/calendar-light.svg"
-                alt="calendar-light-img"
-              />
-              <img v-else src="../assets/svgs/calendar-dark.svg" alt="calendar-dark-img" /><span class="fa"> {{ news.hour }} </span>
+              <svg width="12" height="12">
+                <use href="../assets/svgs/calendar.svg#svg" id="calendar_icon" />
+              </svg>
+              <span class="fa"> {{ news.hour }} </span>
             </div>
 
             <button type="button">
-              <img
-                v-if="themeStore.theme === 'light' && !transparentHeader"
-                src="../assets/svgs/threeDot-light.svg"
-                alt="threeDot-light-img"
-              />
-              <img v-else src="../assets/svgs/threeDot-dark.svg" alt="threeDot-dark-img" />
+              <svg width="16" height="16">
+                <use href="../assets/svgs/threeDot.svg#svg" id="threeDot_icon" />
+              </svg>
             </button>
           </div>
         </div>
@@ -68,9 +57,7 @@
 <script setup>
 import { computed } from 'vue'
 import LastContentArray from '../assets/jsons/LastContentArray.json'
-import useThemeStore from '../stores/theme'
 
-const themeStore = useThemeStore()
 const lastContentList = LastContentArray
 
 const props = defineProps({
@@ -132,5 +119,12 @@ const processed_LastContent = computed(() => {
 }
 .LastContent_layer_item_devider {
   background-color: var(--black-5);
+}
+#comment_icon {
+  stroke: var(--grey-1);
+}
+#calendar_icon,
+#threeDot_icon {
+  fill: var(--grey-1);
 }
 </style>

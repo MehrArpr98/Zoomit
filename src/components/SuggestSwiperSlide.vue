@@ -23,32 +23,23 @@
       <div class="flex flex-wrap justify-between">
         <div class="flex flex-wrap gap-4">
           <div class="flex flex-row justify-center items-center gap-1">
-            <img
-              v-if="themeStore.theme === 'light' && !transparentHeader"
-              src="../assets/svgs/comment-light.svg"
-              alt="comment-light-img"
-            />
-            <img v-else src="../assets/svgs/comment-dark.svg" alt="comment-dark-img" />
+            <svg width="12" height="12">
+              <use href="../assets/svgs/comment.svg#svg" id="comment_icon" />
+            </svg>
             <span class="suggestCarousel_Num text-xs font-normal">{{ item.comments }}</span>
           </div>
           <div class="flex flex-row justify-center items-center gap-1">
-            <img
-              v-if="themeStore.theme === 'light' && !transparentHeader"
-              src="../assets/svgs/calendar-light.svg"
-              alt="calendar-light-img"
-            />
-            <img v-else src="../assets/svgs/calendar-dark.svg" alt="calendar-dark-img" />
+            <svg width="12" height="12">
+              <use href="../assets/svgs/calendar.svg#svg" id="calendar_icon" />
+            </svg>
             <span class="suggestCarousel_Num text-xs font-normal">{{ item.hour }} ساعت پیش</span>
           </div>
         </div>
 
         <button type="button" class="cursor-pointer p-0 border-0 opacity-100 font-bold text-xs">
-          <img
-            v-if="themeStore.theme === 'light' && !transparentHeader"
-            src="../assets/svgs/threeDot-light.svg"
-            alt="threeDot-light-img"
-          />
-          <img v-else src="../assets/svgs/threeDot-dark.svg" alt="threeDot-dark-img" />
+          <svg width="16" height="16">
+            <use href="../assets/svgs/threeDot.svg#svg" id="threeDot_icon" />
+          </svg>
         </button>
       </div>
     </div>
