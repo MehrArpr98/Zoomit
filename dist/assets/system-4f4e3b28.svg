@@ -1,0 +1,11 @@
+<svg id="svg"
+                xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                width="6"
+                height="6"
+              >
+                <path
+                  d="M12.8 0a12.8 12.8 0 1 0 12.8 12.8A12.838 12.838 0 0 0 12.8 0zM1.6 12.8A11.123 11.123 0 0 1 12 1.68V24A11.253 11.253 0 0 1 1.6 12.8z"
+                  transform="translate(3 3)"
+                ></path></svg
+              >
