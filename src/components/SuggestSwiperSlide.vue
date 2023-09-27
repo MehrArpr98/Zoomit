@@ -32,6 +32,7 @@
             <svg width="12" height="12">
               <use href="../assets/svgs/calendar.svg#svg" id="calendar_icon" />
             </svg>
+
             <span class="suggestCarousel_Num text-xs font-normal">{{ item.hour }} ساعت پیش</span>
           </div>
         </div>

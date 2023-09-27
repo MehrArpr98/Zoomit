@@ -16,17 +16,10 @@
             class="MenuDesktop_button py-1 px-4 cursor-pointer w-32 h-8 border-0 text-xs"
           >
             <div class="flex justify-center items-center gap-2">
-              <svg
-                class="MenuDesktop_buttonSvg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                width="16"
-                height="16"
-              >
-                <path
-                  d="M8 0v3H6V0h2zM4 0v3H2V0h2zm8 0v3h-2V0h2zM15 5H1c-.6 0-1 .4-1 1v7c0 1.7 1.3 3 3 3h7c1.7 0 3-1.3 3-3v-2c1.7 0 3-1.3 3-3V6c0-.6-.4-1-1-1zm-1 3c0 .6-.4 1-1 1V7h1v1z"
-                ></path></svg
-              ><span class="text-sm font-black">زومیت من</span>
+              <svg width="16" height="16">
+                <use href="../assets/svgs/cup.svg#svg" id="MenuDesktop_buttonSvg" />
+              </svg>
+              <span class="text-sm font-black">زومیت من</span>
             </div>
           </button>
           <ul class="flex items-center relative list-none py-2">
@@ -39,17 +32,10 @@
                 <button
                   class="flex justify-center items-center gap-1 cursor-pointer w-full h-full border-0 outline-0 py-0.5 px-1.5 gap-1"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 6 6"
-                    width="8"
-                    height="8"
-                    class="MenuDesktop_itemSvg"
-                  >
-                    <path
-                      d="M3.75 0L2.25 0 2.25 2.25 0 2.25 0 3.75 2.25 3.75 2.25 6 3.75 6 3.75 3.75 6 3.75 6 2.25 3.75 2.25z"
-                    ></path></svg
-                  ><span class="MenuDesktop_itemText text-sm font-black"> محصولات</span>
+                  <svg width="8" height="8">
+                    <use href="../assets/svgs/plus.svg#svg" id="MenuDesktop_itemSvg" />
+                  </svg>
+                  <span class="MenuDesktop_itemText text-sm font-black"> محصولات</span>
                 </button>
               </li>
               <div
@@ -83,17 +69,10 @@
                 <button
                   class="flex justify-center items-center gap-1 cursor-pointer w-full h-full border-0 outline-0 py-0.5 px-1.5 gap-1"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 6 6"
-                    width="8"
-                    height="8"
-                    class="MenuDesktop_itemSvg"
-                  >
-                    <path
-                      d="M3.75 0L2.25 0 2.25 2.25 0 2.25 0 3.75 2.25 3.75 2.25 6 3.75 6 3.75 3.75 6 3.75 6 2.25 3.75 2.25z"
-                    ></path></svg
-                  ><span class="MenuDesktop_itemText text-sm font-black">فناوری</span>
+                  <svg width="8" height="8">
+                    <use href="../assets/svgs/plus.svg#svg" id="MenuDesktop_itemSvg" />
+                  </svg>
+                  <span class="MenuDesktop_itemText text-sm font-black">فناوری</span>
                 </button>
               </li>
               <div
@@ -153,17 +132,10 @@
                 <button
                   class="flex justify-center items-center gap-1 cursor-pointer w-full h-full border-0 outline-0 py-0.5 px-1.5 gap-1"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 6 6"
-                    width="8"
-                    height="8"
-                    class="MenuDesktop_itemSvg"
-                  >
-                    <path
-                      d="M3.75 0L2.25 0 2.25 2.25 0 2.25 0 3.75 2.25 3.75 2.25 6 3.75 6 3.75 3.75 6 3.75 6 2.25 3.75 2.25z"
-                    ></path></svg
-                  ><span class="MenuDesktop_itemText text-sm font-black">زومیت</span>
+                  <svg width="8" height="8">
+                    <use href="../assets/svgs/plus.svg#svg" id="MenuDesktop_itemSvg" />
+                  </svg>
+                  <span class="MenuDesktop_itemText text-sm font-black">زومیت</span>
                 </button>
               </li>
               <div
@@ -195,11 +167,8 @@
             <div
               class="MenuDesktop_svgContainer flex justify-center items-center w-5 h-5 rounded-full"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12">
-                <path
-                  d="M18.449 16.751l-4.586-4.586a7.222 7.222 0 1 0-1.7 1.7l4.586 4.586zM2.4 8A5.6 5.6 0 1 1 8 13.6 5.6 5.6 0 0 1 2.4 8z"
-                  transform="translate(2 2)"
-                ></path>
+              <svg width="12" height="12">
+                <use href="../assets/svgs/search.svg#svg" id="MenuDesktop_search" />
               </svg>
             </div>
             <span class="text-sm font-black">جستجو</span>
@@ -216,18 +185,10 @@
               :class="{ active: theme == 'dark' }"
               data-theme="dark"
               class="relative w-5 h-5 flex justify-center items-center rounded-full cursor-pointer"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                width="8"
-                height="8"
-                class="w-3 h-3 z-10"
-              >
-                <path
-                  d="M6 0C2.5.9 0 4.1 0 7.9 0 12.4 3.6 16 8.1 16c3.8 0 6.9-2.5 7.9-6C9.9 11.7 4.3 6.1 6 0z"
-                ></path>
+            >
+              <svg width="12" height="12">
+                <use href="../assets/svgs/moon.svg#svg" id="moon_icon" />
               </svg>
-
               <input
                 name="theme"
                 v-model="theme"
@@ -240,18 +201,11 @@
               :class="{ active: theme == 'system' }"
               data-theme="system"
               class="relative w-5 h-5 flex justify-center items-center rounded-full cursor-pointer"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 32 32"
-                width="8"
-                height="8"
-                class="w-3 h-3 z-10"
-              >
-                <path
-                  d="M12.8 0a12.8 12.8 0 1 0 12.8 12.8A12.838 12.838 0 0 0 12.8 0zM1.6 12.8A11.123 11.123 0 0 1 12 1.68V24A11.253 11.253 0 0 1 1.6 12.8z"
-                  transform="translate(3 3)"
-                ></path></svg
-              ><input
+            >
+              <svg width="12" height="12">
+                <use href="../assets/svgs/system.svg#svg" id="system_icon" />
+              </svg>
+              <input
                 name="theme"
                 v-model="theme"
                 type="radio"
@@ -264,17 +218,12 @@
               :class="{ active: theme == 'light' }"
               data-theme="light"
               class="relative w-5 h-5 flex justify-center items-center rounded-full cursor-pointer"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                width="8"
-                height="8"
-                class="w-3 h-3 z-10"
-              >
-                <path
-                  d="M9 14v2H7v-2h2zm3.949-2.395l1.415 1.413-1.414 1.415-1.415-1.414 1.414-1.414zm-9.968-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM8 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm8 3v2h-2V7h2zM2 7v2H0V7h2zm1.05-5.293L4.465 3.12 3.05 4.535 1.636 3.121 3.05 1.707zm9.83-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM9 0v2H7V0h2z"
-                ></path></svg
-              ><input
+            >
+              <svg width="12" height="12">
+                <use href="../assets/svgs/sun.svg#svg" id="sun_icon" />
+              </svg>
+
+              <input
                 name="theme"
                 v-model="theme"
                 type="radio"
@@ -352,23 +301,26 @@ header.header-bg .MenuDesktop_svgContainer {
   background-color: var(--header--menu-link);
 }
 header .MenuDesktop_svgContainer {
-  background-color: var(--white);
+  background-color: var(--header--search-icon);
+  fill: var(--header--zoomit-typography);
 }
 header ul a.active .MenuDesktop_itemText,
 header ul a:hover .MenuDesktop_itemText {
   color: var(--text-hover);
 }
 
-header .MenuDesktop_itemSvg,
-.MenuDesktop_button .MenuDesktop_buttonSvg,
+header #MenuDesktop_itemSvg,
+.MenuDesktop_button #MenuDesktop_buttonSvg,
 header.header-bg .MenuDesktop_svgContainer svg {
   fill: var(--white);
 }
 
-header.header-bg .MenuDesktop_itemSvg,
-header.header-bg .MenuDesktop_button .MenuDesktop_buttonSvg,
-header .MenuDesktop_svgContainer svg {
+header.header-bg #MenuDesktop_itemSvg,
+header.header-bg .MenuDesktop_button #MenuDesktop_buttonSvg {
   fill: var(--header--menu-link);
+}
+header.header-bg #MenuDesktop_search {
+  fill: var(--header--search-icon);
 }
 header.header-bg .z-text {
   fill: var(--header--zoomit-typography);
@@ -397,13 +349,18 @@ nav {
 .ToggleTheme label svg {
   fill: var(--white);
 }
-.ToggleTheme label[data-theme='light'].active svg {
+#moon_icon,
+#sun_icon,
+#earth_icon {
+  fill: var(--white);
+}
+.ToggleTheme label[data-theme='light'].active #sun_icon {
   fill: var(--warning-1);
 }
-.ToggleTheme label[data-theme='dark'].active svg {
+.ToggleTheme label[data-theme='dark'].active #moon_icon {
   fill: var(--info);
 }
-.ToggleTheme label[data-theme='system'].active svg {
+.ToggleTheme label[data-theme='system'].active #system_icon {
   fill: var(--success-1);
 }
 .ToggleTheme label.active {
