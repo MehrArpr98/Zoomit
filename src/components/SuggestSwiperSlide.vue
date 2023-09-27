@@ -1,0 +1,106 @@
+<template>
+  <div class="suggestCarousel_Wrapper mb-2 relative">
+    <a :href="item.link"
+      ><div class="suggestCarousel_ImageWrapper w-full relative">
+        <img
+          :alt="item.alt"
+          loading="lazy"
+          decoding="async"
+          data-nimg="fill"
+          class="object-cover rounded-t absolute w-full h-full inset-0"
+          :src="item.src"
+        /></div
+    ></a>
+
+    <div class="p-6 pb-4 flex flex-col justify-between gap-4 w-full">
+      <div class="flex flex-nowrap gap-2">
+        <a class="suggestCarousel_Textlink" :href="item.link"
+          ><div class="suggestCarousel_Text">
+            {{ item.text }}
+          </div></a
+        >
+      </div>
+      <div class="flex flex-wrap justify-between">
+        <div class="flex flex-wrap gap-4">
+          <div class="flex flex-row justify-center items-center gap-1">
+            <img
+              v-if="themeStore.theme === 'light' && !transparentHeader"
+              src="../assets/svgs/comment-light.svg"
+              alt="comment-light-img"
+            />
+            <img v-else src="../assets/svgs/comment-dark.svg" alt="comment-dark-img" />
+            <span class="suggestCarousel_Num text-xs font-normal">{{ item.comments }}</span>
+          </div>
+          <div class="flex flex-row justify-center items-center gap-1">
+            <img
+              v-if="themeStore.theme === 'light' && !transparentHeader"
+              src="../assets/svgs/calendar-light.svg"
+              alt="calendar-light-img"
+            />
+            <img v-else src="../assets/svgs/calendar-dark.svg" alt="calendar-dark-img" />
+            <span class="suggestCarousel_Num text-xs font-normal">{{ item.hour }} ساعت پیش</span>
+          </div>
+        </div>
+
+        <button type="button" class="cursor-pointer p-0 border-0 opacity-100 font-bold text-xs">
+          <img
+            v-if="themeStore.theme === 'light' && !transparentHeader"
+            src="../assets/svgs/threeDot-light.svg"
+            alt="threeDot-light-img"
+          />
+          <img v-else src="../assets/svgs/threeDot-dark.svg" alt="threeDot-dark-img" />
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+<script setup>
+import useThemeStore from '../stores/theme'
+
+const themeStore = useThemeStore()
+
+defineProps({
+  item: Object
+})
+</script>
+<style>
+.suggest-swiper-slide {
+  padding-left: 25px;
+  width: calc(25% + 6px) !important;
+}
+/* .suggest-swiper-slide:last-child {
+  padding-left: 0;
+} */
+
+.suggestCarousel_Wrapper {
+  border-radius: 3px;
+  background-color: var(--card);
+  box-shadow: 0 1px 3px 0 var(--elevation);
+}
+
+.suggestCarousel_Text {
+  margin: unset;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text);
+  line-height: 2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.suggestCarousel_ImageWrapper {
+  aspect-ratio: 3 / 2;
+}
+
+.suggestCarousel_Text:hover {
+  color: var(--text-hover);
+}
+
+.suggestCarousel_Num {
+  color: var(--grey-1);
+  font-family: 'Vazir-FD' !important;
+}
+</style>

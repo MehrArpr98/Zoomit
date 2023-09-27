@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="mb-16">
     <div class="ArticleList_layer">
       <div class="flex flex-col justify-end gap-12 -mt-16">
         <div class="">
@@ -51,7 +51,7 @@
           <div size="12" class="Products_layer_container_col2">
             <div class="relative">
               <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
-                <products-swiper />
+                <swiper filter_item="" :perView="9" :array="ProductsArray" type="product" />
               </div>
             </div>
           </div>
@@ -96,7 +96,12 @@
             <div class="w-full mt-8 relative">
               <div class="relative">
                 <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
-                  <suggest-swiper :suggest_filter="suggest_filter" />
+                  <swiper
+                    :filter_item="suggest_filter"
+                    :perView="4"
+                    :array="SuggestsArray"
+                    type="suggest"
+                  />
                 </div>
               </div>
             </div>
@@ -203,12 +208,66 @@
         </div>
       </div>
     </div>
+
+    <div class="Suggest_layer">
+      <div class="Suggest_layer_container mx-auto w-full mt-12">
+        <div class="flex flex-col justify-end gap-12">
+          <div class="w-full">
+            <div class="flex flex-wrap justify-between items-center md:px-12 pr-16 md:pr-16">
+              <div class="Suggest_layer_title relative">
+                <h2 font-size="1.6" font-weight="900">پیشنهاد زومیت</h2>
+              </div>
+            </div>
+            <div class="w-full mt-4 md:mt-8 md:px-12">
+              <div class="relative">
+                <div class="relative">
+                  <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
+                    <div class="flex">
+                      <label
+                        v-for="myButton in Zoomit_Suggest_layer_buttons"
+                        :key="myButton"
+                        class="ButtonShape text-xs font-bold py-2 px-4 border-0 cursor-pointer rounded-2xl relative w-fit h-8 flex justify-center items-center ml-5"
+                        :class="{ active: zoomitSuggest_filter === myButton.val }"
+                      >
+                        {{ myButton.text }}
+                        <input
+                          name="zoomitSuggest_filter"
+                          v-model="zoomitSuggest_filter"
+                          type="radio"
+                          class="absolute top-0 left-0 w-0 h-0 -z-10"
+                          :value="myButton.val"
+                      /></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full mt-8 relative">
+              <div class="relative">
+                <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
+                  <swiper
+                    :filter_item="zoomitSuggest_filter"
+                    :perView="4"
+                    :array="ZoomitSuggestsArray"
+                    type="zoomitSuggest"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
 <script setup>
-import ProductsSwiper from '../components/ProductsSwiper.vue'
-import SuggestSwiper from '../components/SuggestSwiper.vue'
+
+import SuggestsArray from '../assets/jsons/SuggestsArray.json'
+import ProductsArray from '../assets/jsons/ProductsArray.json'
+import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
+import Swiper from '../components/Swiper.vue'
 import ArticleList from '../components/ArticleList.vue'
 import LastContentList from '../components/LastContentList.vue'
 import ThreeNewsCard from '../components/ThreeNewsCard.vue'
@@ -216,8 +275,10 @@ import { ref } from 'vue'
 import MostViewsCardsArray from '../assets/jsons/MostViewsCardsArray.json'
 import CheckedsCardsArray from '../assets/jsons/CheckedsCardsArray.json'
 
+
 const suggest_filter = ref('text')
 const LastContent_filter = ref('newest')
+const zoomitSuggest_filter = ref('mobile')
 const Suggest_layer_buttons = ref([
   {
     val: 'text',
@@ -246,11 +307,35 @@ const LastContent_layer_buttons = ref([
     text: 'پربحث‌ترین‌'
   }
 ])
+const Zoomit_Suggest_layer_buttons = ref([
+  {
+    val: 'mobile',
+    text: 'موبایل'
+  },
+  {
+    val: 'hardware',
+    text: 'سخت افزار'
+  },
+  {
+    val: 'check',
+    text: 'بررسی'
+  },
+  {
+    val: 'guide',
+    text: ' راهنمای خرید'
+  },
 
-
+  {
+    val: 'educate',
+    text: 'آموزش های کاربردی'
+  },
+  {
+    val: 'shater',
+    text: 'شاتر'
+  },
+])
 const MostViews_cards = MostViewsCardsArray
 const Checkeds_cards = CheckedsCardsArray
-
 </script>
 
 <style>

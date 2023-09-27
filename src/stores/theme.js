@@ -1,4 +1,4 @@
-/* import { defineStore } from 'pinia'
+ import { defineStore } from 'pinia'
 
 export default defineStore('theme', {
   state: () => ({
@@ -14,4 +14,4 @@ export default defineStore('theme', {
       document.body.setAttribute('data-theme', this.theme)
     }
   }
-}) */
+}) 
