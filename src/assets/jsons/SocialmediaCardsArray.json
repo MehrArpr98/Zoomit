@@ -1,0 +1,17 @@
+[
+  {
+    "href": "https://www.youtube.com/c/ZoomitTV",
+    "title": "یوتیوب",
+    "name" : "youtube"
+  },
+  {
+    "href": "https://twitter.com/thezoomit",
+    "title": "توییتر",
+    "name" : "twitter"
+  },
+  {
+    "href": "https://www.instagram.com/thezoomit",
+    "title": "اینستاگرام",
+    "name" : "instagram"
+  }
+]

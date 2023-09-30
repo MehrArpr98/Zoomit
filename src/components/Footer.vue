@@ -133,19 +133,26 @@
                 <img src="../assets/svgs/linkedin.svg" alt="linkedin-img" />
               </a>
               <a href="https://www.instagram.com/thezoomit/" rel="nofollow" target="_blank">
-                <img src="../assets/svgs/instagram.svg" alt="instagram-img" />
+                <svg width="24" height="24">
+                <use href="../assets/svgs/instagram.svg#svg" id="footer_socialmedia" />
+              </svg>
               </a>
               <a href="https://www.aparat.com/zoomit" rel="nofollow" target="_blank">
                 <img src="../assets/svgs/aparat.svg" alt="aparat-img" />
               </a>
               <a href="https://www.youtube.com/c/ZoomitTV" rel="nofollow" target="_blank">
-                <img src="../assets/svgs/youtube.svg" alt="youtube-img" />
+                <svg width="24" height="24">
+                <use href="../assets/svgs/youtube.svg#svg" id="footer_socialmedia" />
+              </svg>
               </a>
+              
               <a href="https://t.me/thezoomit/" rel="nofollow" target="_blank">
                 <img src="../assets/svgs/telegram.svg" alt="telegram-img" />
               </a>
               <a href="https://twitter.com/thezoomit/" rel="nofollow" target="_blank">
-                <img src="../assets/svgs/twitter.svg" alt="twitter-img" />
+                <svg width="24" height="24">
+                <use href="../assets/svgs/twitter.svg#svg" id="footer_socialmedia" />
+              </svg>
               </a>
             </div>
           </div>
@@ -205,6 +212,10 @@ const themeStore = useThemeStore()
 }
 #col_2_icon {
   fill: var(--text);
+}
+
+#footer_socialmedia{
+  fill :#9696a0
 }
 @media (min-width: 576px) {
   .Footer_FooterContainer {

@@ -120,11 +120,7 @@
                         </div>
                       </div>
 
-                      <div
-                        class="ThreeNews_layer_cards flex gap-4 overflow-x-auto w-full py-0 px-4"
-                      >
-                        <three-news-card :cards="MostViews_cards" />
-                      </div>
+                      <three-card :cards="MostViews_cards" :type="'news'" />
                     </div>
 
                     <advertising-two-col :ads="Ads[2]" :type="'square'" />
@@ -136,13 +132,10 @@
                         </div>
                       </div>
 
-                      <div
-                        class="ThreeNews_layer_cards flex gap-4 overflow-x-auto w-full py-0 px-4"
-                      >
-                        <three-news-card :cards="Checkeds_cards" />
-                      </div>
+                      <three-card :cards="Checkeds_cards" :type="'news'" />
                     </div>
                   </div>
+                  <three-card :cards="Socialmedia_cards" :type="'socialmedia'" />
                 </div>
               </div>
             </div>
@@ -265,11 +258,12 @@ import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
 import Swiper from '../components/Swiper.vue'
 import ArticleList from '../components/ArticleList.vue'
 import LastContentList from '../components/LastContentList.vue'
-import ThreeNewsCard from '../components/ThreeNewsCard.vue'
+import ThreeCard from '../components/ThreeCard.vue'
 import AdvertisingTwoCol from '../components/AdvertisingTwoCol.vue'
 import { ref } from 'vue'
 import MostViewsCardsArray from '../assets/jsons/MostViewsCardsArray.json'
 import CheckedsCardsArray from '../assets/jsons/CheckedsCardsArray.json'
+import SocialmediaCardsArray from '../assets/jsons/SocialmediaCardsArray.json'
 
 const suggest_filter = ref('text')
 const LastContent_filter = ref('newest')
@@ -353,17 +347,18 @@ const Ads = ref([
   ],
   [
     {
-      href:"https://www.lg.com/ir/qned-tvs/2022/why-lg-qned?utm_source=zoomit&utm_medium=mobileviewbanner&utm_campaign=qned&utm_id=spring2023",
-      src: "https://api2.zoomit.ir/media/64805012896c1bcf59b7e34f"
+      href: 'https://www.lg.com/ir/qned-tvs/2022/why-lg-qned?utm_source=zoomit&utm_medium=mobileviewbanner&utm_campaign=qned&utm_id=spring2023',
+      src: 'https://api2.zoomit.ir/media/64805012896c1bcf59b7e34f'
     },
     {
-      href:"https://www.si24.ir/electronic-equipment-insurance?utm_source=zoomit&utm_medium=main-banner&utm_campaign=mobile",
-      src: "https://api2.zoomit.ir/media/63affd7561363f965a01dd2d"
+      href: 'https://www.si24.ir/electronic-equipment-insurance?utm_source=zoomit&utm_medium=main-banner&utm_campaign=mobile',
+      src: 'https://api2.zoomit.ir/media/63affd7561363f965a01dd2d'
     }
   ]
 ])
 const MostViews_cards = MostViewsCardsArray
 const Checkeds_cards = CheckedsCardsArray
+const Socialmedia_cards = SocialmediaCardsArray
 </script>
 
 <style>
@@ -483,12 +478,6 @@ const Checkeds_cards = CheckedsCardsArray
   }
   .Suggest_layer_container {
     max-width: 100%;
-  }
-  .ThreeNews_layer_cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    overflow-x: initial;
-    padding: 0px;
   }
 }
 @media (min-width: 992px) {
