@@ -198,69 +198,19 @@ import MostViewsCardsArray from '../assets/jsons/MostViewsCardsArray.json'
 import CheckedsCardsArray from '../assets/jsons/CheckedsCardsArray.json'
 import SocialmediaCardsArray from '../assets/jsons/SocialmediaCardsArray.json'
 import AdsArray from '../assets/jsons/AdsArray.json'
+import SuggestButtonsArray from '../assets/jsons/SuggestButtonsArray.json'
+import LastContentButtonsArray from '../assets/jsons/LastContentButtonsArray.json'
+import ZoomitSuggestButtonsArray from '../assets/jsons/ZoomitSuggestButtonsArray.json'
 
 const LastContent_filter = ref('newest')
-
-const Suggest_layer_buttons = ref([
-  {
-    val: 'text',
-    text: 'مطلب'
-  },
-  {
-    val: 'video',
-    text: 'ویدیو'
-  }
-])
-const LastContent_layer_buttons = ref([
-  {
-    val: 'newest',
-    text: 'جدیدترین مطالب'
-  },
-  {
-    val: 'science',
-    text: 'علمی 🚀'
-  },
-  {
-    val: 'iran',
-    text: 'ایران 🔥'
-  },
-  {
-    val: 'most_conv',
-    text: 'پربحث‌ترین‌'
-  }
-])
-const Zoomit_Suggest_layer_buttons = ref([
-  {
-    val: 'mobile',
-    text: 'موبایل'
-  },
-  {
-    val: 'hardware',
-    text: 'سخت افزار'
-  },
-  {
-    val: 'check',
-    text: 'بررسی'
-  },
-  {
-    val: 'guide',
-    text: ' راهنمای خرید'
-  },
-
-  {
-    val: 'educate',
-    text: 'آموزش های کاربردی'
-  },
-  {
-    val: 'shater',
-    text: 'شاتر'
-  }
-])
 
 const MostViews_cards = MostViewsCardsArray
 const Checkeds_cards = CheckedsCardsArray
 const Socialmedia_cards = SocialmediaCardsArray
 const Ads = AdsArray
+const Suggest_layer_buttons = SuggestButtonsArray
+const LastContent_layer_buttons = LastContentButtonsArray
+const Zoomit_Suggest_layer_buttons = ZoomitSuggestButtonsArray
 </script>
 
 <style>

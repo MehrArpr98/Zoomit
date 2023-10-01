@@ -47,9 +47,6 @@
   </div>
 </template>
 <script setup>
-import useThemeStore from '../stores/theme'
-
-const themeStore = useThemeStore()
 
 defineProps({
   item: Object
