@@ -60,43 +60,14 @@
                 <h2 font-size="1.6" font-weight="900">پیشنهاد سردبیر</h2>
               </div>
             </div>
-            <div class="w-full mt-4 md:mt-8 md:px-12">
-              <div class="relative">
-                <div class="relative">
-                  <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
-                    <div class="flex">
-                      <label
-                        v-for="myButton in Suggest_layer_buttons"
-                        :key="myButton"
-                        class="ButtonShape text-xs font-bold py-2 px-4 border-0 cursor-pointer rounded-2xl relative w-fit h-8 flex justify-center items-center ml-5"
-                        :class="{ active: suggest_filter === myButton.val }"
-                      >
-                        {{ myButton.text }}
-                        <input
-                          name="suggest_filter"
-                          v-model="suggest_filter"
-                          type="radio"
-                          class="absolute top-0 left-0 w-0 h-0 -z-10"
-                          :value="myButton.val"
-                      /></label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="w-full mt-8 relative">
-              <div class="relative">
-                <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
-                  <swiper
-                    :filter_item="suggest_filter"
-                    :perView="4"
-                    :array="SuggestsArray"
-                    type="suggest"
-                  />
-                </div>
-              </div>
-            </div>
+            <filterable-swiper
+              filter_item="text"
+              :perView="4"
+              :array="SuggestsArray"
+              type="suggest"
+              :buttons="Suggest_layer_buttons"
+            />
           </div>
         </div>
       </div>
@@ -148,24 +119,12 @@
                       <h2 font-weight="900" class="LastContent_layer_title">آخرین مطالب</h2>
                     </div>
                     <div class="my-6 relative">
-                      <div class="relative">
-                        <div class="flex">
-                          <label
-                            v-for="myButton in LastContent_layer_buttons"
-                            :key="myButton"
-                            class="ButtonShape text-xs font-bold py-2 px-4 border-0 cursor-pointer rounded-2xl relative w-fit h-8 flex justify-center items-center ml-5"
-                            :class="{ active: LastContent_filter === myButton.val }"
-                          >
-                            {{ myButton.text }}
-                            <input
-                              name="LastContent_filter"
-                              v-model="LastContent_filter"
-                              type="radio"
-                              class="absolute top-0 left-0 w-0 h-0 -z-10"
-                              :value="myButton.val"
-                          /></label>
-                        </div>
-                      </div>
+                      <filter-buttons
+                        @SetFilter="(e) => { LastContent_filter = e }"
+                        :filter_item="LastContent_filter"
+                        type="LastContent"
+                        :buttons="LastContent_layer_buttons"
+                      />
                     </div>
 
                     <last-content-list :LastContent_filter="LastContent_filter" />
@@ -207,43 +166,14 @@
                 </div>
               </a>
             </div>
-            <div class="w-full mt-4 md:mt-8 md:px-12">
-              <div class="relative">
-                <div class="relative">
-                  <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
-                    <div class="flex">
-                      <label
-                        v-for="myButton in Zoomit_Suggest_layer_buttons"
-                        :key="myButton"
-                        class="ButtonShape text-xs font-bold py-2 px-4 border-0 cursor-pointer rounded-2xl relative w-fit h-8 flex justify-center items-center ml-5"
-                        :class="{ active: zoomitSuggest_filter === myButton.val }"
-                      >
-                        {{ myButton.text }}
-                        <input
-                          name="zoomitSuggest_filter"
-                          v-model="zoomitSuggest_filter"
-                          type="radio"
-                          class="absolute top-0 left-0 w-0 h-0 -z-10"
-                          :value="myButton.val"
-                      /></label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="w-full mt-8 relative">
-              <div class="relative">
-                <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
-                  <swiper
-                    :filter_item="zoomitSuggest_filter"
-                    :perView="4"
-                    :array="ZoomitSuggestsArray"
-                    type="zoomitSuggest"
-                  />
-                </div>
-              </div>
-            </div>
+            <filterable-swiper
+              filter_item="mobile"
+              :perView="4"
+              :array="ZoomitSuggestsArray"
+              type="zoomitSuggest"
+              :buttons="Zoomit_Suggest_layer_buttons"
+            />
           </div>
         </div>
       </div>
@@ -254,10 +184,12 @@
 <script setup>
 import { ref } from 'vue'
 import Swiper from '../components/Swiper.vue'
+import FilterableSwiper from '../components/FilterableSwiper.vue'
 import ArticleList from '../components/ArticleList.vue'
 import LastContentList from '../components/LastContentList.vue'
 import ThreeCard from '../components/ThreeCard.vue'
 import AdvertisingTwoCol from '../components/AdvertisingTwoCol.vue'
+import FilterButtons from '../components/FilterButtons.vue'
 
 import SuggestsArray from '../assets/jsons/SuggestsArray.json'
 import ProductsArray from '../assets/jsons/ProductsArray.json'
@@ -267,9 +199,7 @@ import CheckedsCardsArray from '../assets/jsons/CheckedsCardsArray.json'
 import SocialmediaCardsArray from '../assets/jsons/SocialmediaCardsArray.json'
 import AdsArray from '../assets/jsons/AdsArray.json'
 
-const suggest_filter = ref('text')
 const LastContent_filter = ref('newest')
-const zoomitSuggest_filter = ref('mobile')
 
 const Suggest_layer_buttons = ref([
   {
@@ -327,12 +257,10 @@ const Zoomit_Suggest_layer_buttons = ref([
   }
 ])
 
-
 const MostViews_cards = MostViewsCardsArray
 const Checkeds_cards = CheckedsCardsArray
 const Socialmedia_cards = SocialmediaCardsArray
 const Ads = AdsArray
-
 </script>
 
 <style>
@@ -345,12 +273,11 @@ const Ads = AdsArray
 }
 
 .Products_layer_container_col1,
-.Products_layer_container_col2  {
+.Products_layer_container_col2 {
   -webkit-box-flex: 1;
   flex: 0 0 100%;
   max-width: 100%;
 }
-
 
 .Products_layer_title::before,
 .Suggest_layer_title::before,
