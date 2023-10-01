@@ -1,13 +1,8 @@
 <template>
-  <Header />
-
-  <RouterView />
-  
-  <Footer />
+ <app-layout />
 </template>
 
 <script setup>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-</script>
+import AppLayout from './layouts/appLayout.vue'
 
+</script>
