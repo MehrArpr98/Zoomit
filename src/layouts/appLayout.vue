@@ -1,5 +1,5 @@
 <template>
-    <component :is="layout === 'defaultLayout' ? defaultLayout : layout === 'productLayout' ? productLayout : div">
+    <component :is="layout === 'productLayout' ? productLayout : defaultLayout">
       <router-view />
     </component>
   </template>

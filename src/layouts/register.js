@@ -1,12 +1,3 @@
-// path: src/layouts/register.ts
-
-
-
-/**
- * Register layouts in the app instance
- *
- * @param {App<Element>} app
- */
 export function registerLayouts(app) {
   const layouts = import.meta.globEager('./*.vue');
 
