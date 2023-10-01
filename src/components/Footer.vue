@@ -81,7 +81,6 @@
                 />
                 <use v-else href="../assets/svgs/zoomg-dark.svg#svg" />
               </svg>
-              
             </a>
 
             <a
@@ -114,45 +113,46 @@
           </div>
           <div class="flex flex-wrap justify-between items-center">
             <div class="flex flex-wrap gap-5">
-              <a
-                href="https://www.zoomit.ir/feed/"
-                rel="nofollow"
-                target="_blank"
-                class="Footer_Link"
-              >
-                <img src="../assets/svgs/bluetooth.svg" alt="bluetooth-img" />
+              <a href="https://www.zoomit.ir/feed/" rel="nofollow" target="_blank">
+                <svg width="24" height="24">
+                  <use href="../assets/svgs/bluetooth.svg#svg" id="footer_socialmedia" />
+                </svg>
               </a>
-              <a
-                href="https://fa.wikipedia.org/wiki/%D8%B2%D9%88%D9%85%DB%8C%D8%AA"
-                rel="nofollow"
-                target="_blank"
-              >
-                <img src="../assets/svgs/wikipedia.svg" alt="wikipedia-img" />
+              <a href="https://fa.wikipedia.org/wiki/%D8%B2%D9%88%D9%85%DB%8C%D8%AA" rel="nofollow" target="_blank">               
+                <svg width="24" height="24">
+                  <use href="../assets/svgs/wikipedia.svg#svg" id="footer_socialmedia" />
+                </svg>
               </a>
               <a href="https://www.linkedin.com/company/zoomit" rel="nofollow" target="_blank">
-                <img src="../assets/svgs/linkedin.svg" alt="linkedin-img" />
+                <svg width="24" height="24">
+                  <use href="../assets/svgs/linkedin.svg#svg" id="footer_socialmedia" />
+                </svg>
               </a>
               <a href="https://www.instagram.com/thezoomit/" rel="nofollow" target="_blank">
                 <svg width="24" height="24">
-                <use href="../assets/svgs/instagram.svg#svg" id="footer_socialmedia" />
-              </svg>
+                  <use href="../assets/svgs/instagram.svg#svg" id="footer_socialmedia" />
+                </svg>
               </a>
               <a href="https://www.aparat.com/zoomit" rel="nofollow" target="_blank">
-                <img src="../assets/svgs/aparat.svg" alt="aparat-img" />
+                <svg width="24" height="24">
+                  <use href="../assets/svgs/aparat.svg#svg" id="footer_socialmedia" />
+                </svg>
               </a>
               <a href="https://www.youtube.com/c/ZoomitTV" rel="nofollow" target="_blank">
                 <svg width="24" height="24">
-                <use href="../assets/svgs/youtube.svg#svg" id="footer_socialmedia" />
-              </svg>
+                  <use href="../assets/svgs/youtube.svg#svg" id="footer_socialmedia" />
+                </svg>
               </a>
-              
+
               <a href="https://t.me/thezoomit/" rel="nofollow" target="_blank">
-                <img src="../assets/svgs/telegram.svg" alt="telegram-img" />
+                <svg width="24" height="24">
+                  <use href="../assets/svgs/telegram.svg#svg" id="footer_socialmedia" />
+                </svg>
               </a>
               <a href="https://twitter.com/thezoomit/" rel="nofollow" target="_blank">
                 <svg width="24" height="24">
-                <use href="../assets/svgs/twitter.svg#svg" id="footer_socialmedia" />
-              </svg>
+                  <use href="../assets/svgs/twitter.svg#svg" id="footer_socialmedia" />
+                </svg>
               </a>
             </div>
           </div>
@@ -214,8 +214,8 @@ const themeStore = useThemeStore()
   fill: var(--text);
 }
 
-#footer_socialmedia{
-  fill :#9696a0
+#footer_socialmedia {
+  fill: #9696a0;
 }
 @media (min-width: 576px) {
   .Footer_FooterContainer {

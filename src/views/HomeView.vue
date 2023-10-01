@@ -252,22 +252,25 @@
 </template>
 
 <script setup>
-import SuggestsArray from '../assets/jsons/SuggestsArray.json'
-import ProductsArray from '../assets/jsons/ProductsArray.json'
-import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
+import { ref } from 'vue'
 import Swiper from '../components/Swiper.vue'
 import ArticleList from '../components/ArticleList.vue'
 import LastContentList from '../components/LastContentList.vue'
 import ThreeCard from '../components/ThreeCard.vue'
 import AdvertisingTwoCol from '../components/AdvertisingTwoCol.vue'
-import { ref } from 'vue'
+
+import SuggestsArray from '../assets/jsons/SuggestsArray.json'
+import ProductsArray from '../assets/jsons/ProductsArray.json'
+import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
 import MostViewsCardsArray from '../assets/jsons/MostViewsCardsArray.json'
 import CheckedsCardsArray from '../assets/jsons/CheckedsCardsArray.json'
 import SocialmediaCardsArray from '../assets/jsons/SocialmediaCardsArray.json'
+import AdsArray from '../assets/jsons/AdsArray.json'
 
 const suggest_filter = ref('text')
 const LastContent_filter = ref('newest')
 const zoomitSuggest_filter = ref('mobile')
+
 const Suggest_layer_buttons = ref([
   {
     val: 'text',
@@ -324,41 +327,12 @@ const Zoomit_Suggest_layer_buttons = ref([
   }
 ])
 
-const Ads = ref([
-  [
-    {
-      href: 'https://fownix.com/fx/?utm_source=zoomit&utm_medium=banner&utm_campaign=fx',
-      src: 'https://api2.zoomit.ir/media/64fffc1ac52f30497f36f08b'
-    },
-    {
-      href: 'https://shop.matris.co.ir/g281uv',
-      src: 'https://api2.zoomit.ir/media/64d355336527439c38119a7f'
-    }
-  ],
-  [
-    {
-      href: 'https://www.mvmco.ir/products/19/X55pro?utm_source=zoomit&amp;utm_medium=banner&amp;utm_campaign=x55prolifestyle',
-      src: 'https://api2.zoomit.ir/media/650acbbe746b0421ae9b66ee'
-    },
-    {
-      href: 'https://asiatech.ir/page/tabestoon1402/?utm_source=zoomit&amp;utm_medium=referral&amp;utm_campaign=tabestoon1402',
-      src: 'https://api2.zoomit.ir/media/64d9cc99c50aed6838dee23f'
-    }
-  ],
-  [
-    {
-      href: 'https://www.lg.com/ir/qned-tvs/2022/why-lg-qned?utm_source=zoomit&utm_medium=mobileviewbanner&utm_campaign=qned&utm_id=spring2023',
-      src: 'https://api2.zoomit.ir/media/64805012896c1bcf59b7e34f'
-    },
-    {
-      href: 'https://www.si24.ir/electronic-equipment-insurance?utm_source=zoomit&utm_medium=main-banner&utm_campaign=mobile',
-      src: 'https://api2.zoomit.ir/media/63affd7561363f965a01dd2d'
-    }
-  ]
-])
+
 const MostViews_cards = MostViewsCardsArray
 const Checkeds_cards = CheckedsCardsArray
 const Socialmedia_cards = SocialmediaCardsArray
+const Ads = AdsArray
+
 </script>
 
 <style>
@@ -370,17 +344,13 @@ const Socialmedia_cards = SocialmediaCardsArray
   background-color: var(--background-2);
 }
 
-.Products_layer_container_col1 {
+.Products_layer_container_col1,
+.Products_layer_container_col2  {
   -webkit-box-flex: 1;
   flex: 0 0 100%;
   max-width: 100%;
 }
 
-.Products_layer_container_col2 {
-  -webkit-box-flex: 1;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
 
 .Products_layer_title::before,
 .Suggest_layer_title::before,
