@@ -52,7 +52,11 @@
     <div class="Suggest_layer">
       <div class="Suggest_layer_container mx-auto w-full mt-12">
         <div class="flex flex-col justify-end gap-12">
-          <advertising-two-col :ads="Ads[0]" :type="'rectangle'" class="md:px-12 w-full mx-auto" />
+          <advertising-two-col
+            :ads="AdsArray[0]"
+            :type="'rectangle'"
+            class="md:px-12 w-full mx-auto"
+          />
 
           <div class="w-full">
             <div class="flex flex-wrap justify-between items-center md:px-12 pr-16 md:pr-16">
@@ -66,7 +70,7 @@
               :perView="4"
               :array="SuggestsArray"
               type="suggest"
-              :buttons="Suggest_layer_buttons"
+              :buttons="SuggestButtonsArray"
             />
           </div>
         </div>
@@ -82,7 +86,7 @@
               <div class="sticky top-20">
                 <div class="flex flex-col gap-12">
                   <div class="flex flex-col flex-nowrap justify-end gap-12">
-                    <advertising-two-col :ads="Ads[1]" :type="'square'" />
+                    <advertising-two-col :ads="AdsArray[1]" :type="'square'" />
 
                     <div class="MostViews_layer mb-4">
                       <div class="mb-8 pr-4">
@@ -91,10 +95,10 @@
                         </div>
                       </div>
 
-                      <three-card :cards="MostViews_cards" :type="'news'" />
+                      <three-card :cards="MostViewsCardsArray" :type="'news'" />
                     </div>
 
-                    <advertising-two-col :ads="Ads[2]" :type="'square'" />
+                    <advertising-two-col :ads="AdsArray[2]" :type="'square'" />
 
                     <div class="Checkeds_layer mb-4">
                       <div class="mb-8 pr-4">
@@ -103,10 +107,10 @@
                         </div>
                       </div>
 
-                      <three-card :cards="Checkeds_cards" :type="'news'" />
+                      <three-card :cards="CheckedsCardsArray" :type="'news'" />
                     </div>
                   </div>
-                  <three-card :cards="Socialmedia_cards" :type="'socialmedia'" />
+                  <three-card :cards="SocialmediaCardsArray" :type="'socialmedia'" />
                 </div>
               </div>
             </div>
@@ -118,16 +122,8 @@
                     <div class="flex flex-col flex-wrap gap-1">
                       <h2 font-weight="900" class="LastContent_layer_title">آخرین مطالب</h2>
                     </div>
-                    <div class="my-6 relative">
-                      <filter-buttons
-                        @SetFilter="(e) => { LastContent_filter = e }"
-                        :filter_item="LastContent_filter"
-                        type="LastContent"
-                        :buttons="LastContent_layer_buttons"
-                      />
-                    </div>
 
-                    <last-content-list :LastContent_filter="LastContent_filter" />
+                    <last-content-list />
 
                     <a
                       variant="text"
@@ -172,7 +168,7 @@
               :perView="4"
               :array="ZoomitSuggestsArray"
               type="zoomitSuggest"
-              :buttons="Zoomit_Suggest_layer_buttons"
+              :buttons="ZoomitSuggestButtonsArray"
             />
           </div>
         </div>
@@ -182,35 +178,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import Swiper from '../components/Swiper.vue'
-import FilterableSwiper from '../components/FilterableSwiper.vue'
 import ArticleList from '../components/ArticleList.vue'
-import LastContentList from '../components/LastContentList.vue'
-import ThreeCard from '../components/ThreeCard.vue'
+import Swiper from '../components/Swiper.vue'
 import AdvertisingTwoCol from '../components/AdvertisingTwoCol.vue'
-import FilterButtons from '../components/FilterButtons.vue'
+import FilterableSwiper from '../components/FilterableSwiper.vue'
+import ThreeCard from '../components/ThreeCard.vue'
+import LastContentList from '../components/LastContentList.vue'
 
-import SuggestsArray from '../assets/jsons/SuggestsArray.json'
 import ProductsArray from '../assets/jsons/ProductsArray.json'
-import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
+import AdsArray from '../assets/jsons/AdsArray.json'
+import SuggestButtonsArray from '../assets/jsons/SuggestButtonsArray.json'
+import SuggestsArray from '../assets/jsons/SuggestsArray.json'
 import MostViewsCardsArray from '../assets/jsons/MostViewsCardsArray.json'
 import CheckedsCardsArray from '../assets/jsons/CheckedsCardsArray.json'
 import SocialmediaCardsArray from '../assets/jsons/SocialmediaCardsArray.json'
-import AdsArray from '../assets/jsons/AdsArray.json'
-import SuggestButtonsArray from '../assets/jsons/SuggestButtonsArray.json'
-import LastContentButtonsArray from '../assets/jsons/LastContentButtonsArray.json'
 import ZoomitSuggestButtonsArray from '../assets/jsons/ZoomitSuggestButtonsArray.json'
-
-const LastContent_filter = ref('newest')
-
-const MostViews_cards = MostViewsCardsArray
-const Checkeds_cards = CheckedsCardsArray
-const Socialmedia_cards = SocialmediaCardsArray
-const Ads = AdsArray
-const Suggest_layer_buttons = SuggestButtonsArray
-const LastContent_layer_buttons = LastContentButtonsArray
-const Zoomit_Suggest_layer_buttons = ZoomitSuggestButtonsArray
+import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
 </script>
 
 <style>
