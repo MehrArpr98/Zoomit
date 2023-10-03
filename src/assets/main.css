@@ -131,10 +131,7 @@ body[data-theme="dark"] {
   font-family: "Vazir-Thin";
   src: url("./fonts/Vazir-Thin.ttf") format("truetype");
 }
-/* @font-face {
-  font-family: "IRANSans_FaNam";
-  src: url("./fonts/IRANSansWeb(FaNum).ttf") format("truetype");
-} */
+
 
 html, body {
   direction: rtl;
