@@ -4,9 +4,9 @@
       <div class="container mx-auto grow">
         <div class="row flex flex-row flex-wrap justify-between">
           <div class="right-menu flex items-center">
-            <a class="logo inline-flex" href="/">
+            <router-link class="logo inline-flex" :to="{ name: 'home' }">
               <img src="https://cdn01.zoomit.ir/zoomit/zoomit_logo.svg" alt="زومیت" />
-            </a>
+            </router-link>
             <div
               class="nav__sub-menu absolute inset-x-0 bg-black opacity-90"
               :class="{ hidden: !show_nav_submenu }"
@@ -447,7 +447,7 @@
                     placeholder="دنبال چیزی میگردی؟"
                   />
                   <div id="headerSearchResult" class="seach-box__searchResultList">
-                   <!--  <ul
+                    <!--  <ul
                       id="ui-id-2"
                       tabindex="0"
                       class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
@@ -459,37 +459,28 @@
               <div class="mainMenu">
                 <ul class="menuList flex">
                   <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/"> <span> صفحه اصلی </span> </a>
+                    <router-link :to="{ name: 'product' }">
+                      <span>صفحه اصلی </span>
+                    </router-link>
                   </li>
                   <li class="megaDropDown megaDropDown-product">
                     <a href="/product/comparelist/" class="productstyle">
                       <span> مقایسه کن </span>
                     </a>
+                    <!--  <router-link :to="{ name: 'product' }">
+                      <span>صفحه اصلی </span>
+                    </router-link> -->
                   </li>
-                  <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/list/mobile/"> <span> گوشی </span> </a>
+                  <li
+                    class="megaDropDown megaDropDown-product"
+                    v-for="item in mainMenu"
+                    :key="item"
+                  >
+                    <router-link :to="{ name: 'productItem', params: { item: item.param } }">
+                      <span>{{ item.text }}</span>
+                    </router-link>
                   </li>
-                  <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/list/laptop/"> <span> لپ تاپ </span> </a>
-                  </li>
-                  <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/list/gaming-console/"> <span> کنسول </span> </a>
-                  </li>
-                  <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/list/tablet/"> <span> تبلت </span> </a>
-                  </li>
-                  <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/list/wearables/"> <span> ساعت هوشمند </span> </a>
-                  </li>
-                  <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/list/split-ac/"> <span> کولر گازی </span> </a>
-                  </li>
-                  <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/list/headphone/"> <span> هدفون </span> </a>
-                  </li>
-                  <li class="megaDropDown megaDropDown-product">
-                    <a href="/product/list/tv/"> <span> تلویزیون </span> </a>
-                  </li>
+
                   <li
                     class="megaDropDown megaDropDown-product"
                     :class="{ activeSubMenu: show_more_submenu }"
@@ -511,132 +502,13 @@
                     >
                       <div class="menuCol h-full">
                         <ul class="h-full overflow-y-auto overflow-x-hidden py-5 px-8">
-                          <li>
-                            <a href="/product/list/powerbank/" class="SubMenu"> پاور بانک </a>
+                          <li v-for="item in menuCol" :key="item">
+                            <router-link
+                              :to="{ name: 'productItem', params: { item: item.param } }"
+                            >
+                              {{ item.text }}
+                            </router-link>
                           </li>
-                          <li><a href="/product/list/hdd/" class="SubMenu"> هارد </a></li>
-                          <li><a href="/product/list/camera/" class="SubMenu"> دوربین </a></li>
-                          <li><a href="/product/list/gamepad/" class="SubMenu"> دسته بازی </a></li>
-                          <li><a href="/product/list/monitor/" class="SubMenu"> مانیتور </a></li>
-                          <li><a href="/product/list/cpu/" class="SubMenu"> پردازنده (CPU) </a></li>
-                          <li><a href="/product/list/vga/" class="SubMenu"> کارت گرافیک </a></li>
-                          <li>
-                            <a href="/product/list/modem-router/" class="SubMenu"> مودم روتر </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/modem-router-simcard/" class="SubMenu">
-                              مودم سیم‌کارتی و همراه
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/router/" class="SubMenu"> روتر و اکسس پوینت </a>
-                          </li>
-                          <li><a href="/product/list/speaker/" class="SubMenu"> اسپیکر </a></li>
-                          <li><a href="/product/list/ssd/" class="SubMenu"> SSD </a></li>
-                          <li>
-                            <a href="/product/list/refrigerator/" class="SubMenu"> یخچال فریزر </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/printer/" class="SubMenu"> پرینتر و اسکنر </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/dishwasher/" class="SubMenu"> ماشین ظرفشویی </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/air-fryer/" class="SubMenu"> هواپز و سرخ کن </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/android-box/" class="SubMenu"> اندروید باکس </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/washing-machine/" class="SubMenu">
-                              ماشین لباسشویی
-                            </a>
-                          </li>
-                          <li><a href="/product/list/webcam/" class="SubMenu"> وب کم </a></li>
-                          <li>
-                            <a href="/product/list/shaver/" class="SubMenu">
-                              ماشین اصلاح و ریش تراش
-                            </a>
-                          </li>
-                          <li><a href="/product/list/hood/" class="SubMenu"> هود آشپزخانه </a></li>
-                          <li><a href="/product/list/keyboard/" class="SubMenu"> کیبورد </a></li>
-                          <li><a href="/product/list/mouse/" class="SubMenu"> ماوس </a></li>
-                          <li><a href="/product/list/memory/" class="SubMenu"> رم </a></li>
-                          <li>
-                            <a href="/product/list/power-supply/" class="SubMenu">
-                              پاور کامپیوتر
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/all-in-one/" class="SubMenu"> All in One </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/telephone/" class="SubMenu"> تلفن رومیزی </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/mini-pc/" class="SubMenu"> کامپیوتر کوچک </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/card-reader/" class="SubMenu"> مموری ریدر </a>
-                          </li>
-                          <li><a href="/product/list/charger/" class="SubMenu"> شارژر </a></li>
-                          <li>
-                            <a href="/product/list/motherboard/" class="SubMenu"> مادربرد </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/ebook-reader/" class="SubMenu"> کتاب خوان </a>
-                          </li>
-                          <li><a href="/product/list/case/" class="SubMenu"> کیس کامپیوتر </a></li>
-                          <li>
-                            <a href="/product/list/cpu-cooler/" class="SubMenu"> فن پردازنده </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/liquid-cooling/" class="SubMenu">
-                              خنک کننده مایع CPU
-                            </a>
-                          </li>
-                          <li><a href="/product/list/case-fan/" class="SubMenu"> فن کیس </a></li>
-                          <li>
-                            <a href="/product/list/laptop-cooler/" class="SubMenu">
-                              کول پد (خنک‌ کننده لپ‌ تاپ)
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/flash-memory/" class="SubMenu"> فلش مموری </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/charge-cable/" class="SubMenu"> کابل USB </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/memory-card/" class="SubMenu"> کارت حافظه </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/microphone/" class="SubMenu"> میکروفون </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/vr/" class="SubMenu"> هدست واقعیت مجازی </a>
-                          </li>
-                          <li><a href="/product/list/soundbar/" class="SubMenu"> ساندبار </a></li>
-                          <li>
-                            <a href="/product/list/video-projector/" class="SubMenu">
-                              ویدیو پروژکتور
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/optical-drive/" class="SubMenu"> درایو نوری </a>
-                          </li>
-                          <li><a href="/product/list/mouse-pad/" class="SubMenu"> ماوس پد </a></li>
-                          <li>
-                            <a href="/product/list/bluetooth-dongle/" class="SubMenu">
-                              دانگل بلوتوث
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/product/list/lens/" class="SubMenu"> لنز دوربین عکاسی </a>
-                          </li>
-                          <li><a href="/product/list/miner/" class="SubMenu"> ماینر </a></li>
-                          <li><a href="/product/list/car/" class="SubMenu"> خودرو </a></li>
                         </ul>
                       </div>
                     </div>
@@ -716,6 +588,139 @@ import { ref } from 'vue'
 const show_nav_submenu = ref(false)
 const show_searchbar = ref(false)
 const show_more_submenu = ref(false)
+const mainMenu = [
+  {
+    param: 'mobile',
+    text: 'گوشی'
+  },
+  {
+    param: 'laptop',
+    text: 'لپ تاپ'
+  },
+  {
+    param: 'gaming-console',
+    text: 'کنسول'
+  },
+  {
+    param: 'tablet',
+    text: 'تبلت'
+  },
+
+  {
+    param: 'wearables',
+    text: 'ساعت هوشمند'
+  },
+  {
+    param: 'split-ac',
+    text: 'کولر گازی'
+  },
+  {
+    param: 'headphone',
+    text: 'هدفون'
+  },
+  {
+    param: 'tv',
+    text: 'تلویزیون'
+  }
+]
+const menuCol = [
+  {
+    param: 'powerbank',
+    text: 'پاور بانک '
+  },
+  {
+    param: 'hdd',
+    text: 'هارد'
+  },
+  {
+    param: 'camera',
+    text: 'دوربین'
+  },
+  {
+    param: 'gamepad',
+    text: 'دسته بازی '
+  },
+  {
+    param: 'monitor',
+    text: 'مانیتور'
+  },
+  {
+    param: 'cpu',
+    text: 'پردازنده'
+  },
+  {
+    param: 'vga',
+    text: 'کارت گرافیک'
+  },
+  {
+    param: 'modem-router',
+    text: 'مودم روتر'
+  },
+  {
+    param: 'modem-router-simcard',
+    text: 'مودم سیم‌کارتی و همراه'
+  },
+  {
+    param: 'router',
+    text: 'روتر و اکسس پوینت'
+  },
+  {
+    param: 'speaker',
+    text: 'اسپیکر'
+  },
+  {
+    param: 'ssd',
+    text: 'SSD'
+  },
+  {
+    param: 'refrigerator',
+    text: 'یخچال فریزر '
+  },
+  {
+    param: 'printer',
+    text: 'پرینتر و اسکنر '
+  },
+  {
+    param: 'dishwasher',
+    text: 'ماشین ظرفشویی '
+  },
+  {
+    param: 'air-fryer',
+    text: 'هواپز و سرخ کن '
+  },
+  {
+    param: 'android-box',
+    text: ' اندروید باکس '
+  },
+  {
+    param: 'washing-machine',
+    text: 'ماشین لباسشویی'
+  },
+  {
+    param: 'webcam',
+    text: 'وب کم'
+  },
+  {
+    param: 'shaver',
+    text: 'ماشین اصلاح و ریش تراش'
+  },
+  {
+    param: 'hood',
+    text: 'هود آشپزخانه '
+  },
+  {
+    param: 'keyboard',
+    text: 'کیبورد'
+  },
+  {
+    param: 'mouse',
+    text: 'ماوس'
+  },
+  {
+    param: 'memory',
+    text: 'رم'
+  }
+]
 /* $('#frm_newletter1').submit(function (e) {
     var form = $(this)
     var url = form.attr('action')
