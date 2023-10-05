@@ -13,11 +13,11 @@
     <div class="Products_layer">
       <div class="Products_layer_container md:px-12 md:pl-0 py-8 w-full mx-auto">
         <div class="flex flex-wrap justify-between gap-0 md:gap-4">
-          <div size="12" class="Products_layer_container_col1">
+          <div class="Products_layer_container_col1 shrink-0 grow-0 basis-full max-w-full">
             <div class="flex h-full flex-col justify-around gap-4">
               <div class="">
                 <div class="pr-4">
-                  <div class="Products_layer_title relative">
+                  <div class="main_title relative">
                     <span font-size="1.6" class="text-base font-bold">با چشم باز خرید کنید</span>
                   </div>
                 </div>
@@ -29,7 +29,7 @@
                 variant="contained"
                 colorscheme="default"
                 target="_blank"
-                class="Products_layer_link py-2 px-4 flex justify-center items-center cursor-pointer border-0 w-fit h-fit text-xs font-black"
+                class="Products_layer_link hoverInvert py-2 px-4 flex justify-center items-center cursor-pointer border-0 w-fit h-fit text-xs font-black"
                 href="/product/"
               >
                 <div class="flex flex-row justify-center items-center gap-4">
@@ -38,7 +38,7 @@
               ></a>
             </div>
           </div>
-          <div size="12" class="Products_layer_container_col2">
+          <div class="Products_layer_container_col2 shrink-0 grow-0 basis-full max-w-full">
             <div class="relative">
               <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
                 <swiper filter_item="" :perView="9" :array="ProductsArray" type="product" />
@@ -60,8 +60,8 @@
 
           <div class="w-full">
             <div class="flex flex-wrap justify-between items-center md:px-12 pr-16 md:pr-16">
-              <div class="Suggest_layer_title relative">
-                <h2 font-size="1.6" font-weight="900">پیشنهاد سردبیر</h2>
+              <div class="main_title relative">
+                <span font-size="1.6" font-weight="900">پیشنهاد سردبیر</span>
               </div>
             </div>
 
@@ -82,7 +82,7 @@
         <div class="mx-auto w-full md:px-12">
           <div class="ComplexTwoCol_layer_content flex flex-col-reverse">
             <!-- ComplexTwoCol_layer_content col right  -->
-            <div class="ComplexTwoCol_layer_content_col_right mt-8 pl-0">
+            <div class="ComplexTwoCol_layer_content_col_right mt-8 pl-0 basis-0 grow max-w-full">
               <div class="sticky top-20">
                 <div class="flex flex-col gap-12">
                   <div class="flex flex-col flex-nowrap justify-end gap-12">
@@ -90,7 +90,7 @@
 
                     <div class="MostViews_layer mb-4">
                       <div class="mb-8 pr-4">
-                        <div class="ThreeNews_layer_title relative">
+                        <div class="main_title relative">
                           <span font-size="1.6" font-weight="900">پربازدیدترین مطالب</span>
                         </div>
                       </div>
@@ -102,7 +102,7 @@
 
                     <div class="Checkeds_layer mb-4">
                       <div class="mb-8 pr-4">
-                        <div class="ThreeNews_layer_title relative">
+                        <div class="main_title relative">
                           <span font-size="1.6" font-weight="900"> بررسی‌ها</span>
                         </div>
                       </div>
@@ -115,7 +115,7 @@
               </div>
             </div>
             <!-- ComplexTwoCol_layer_content col left  -->
-            <div class="LastContent_layer mt-8 pr-0">
+            <div class="LastContent_layer shrink-0 grow-0 basis-1/2 max-w-1/2 mt-8 pr-0">
               <div class="w-auto md:py-12 md:px-0">
                 <div class="flex flex-col flex-nowrap justify-end gap-12">
                   <div class="">
@@ -128,7 +128,7 @@
                     <a
                       variant="text"
                       colorscheme="default"
-                      class="view_more flex justify-start items-center font-bold text-xs w-auto h-auto py-1 px-4 pr-0 mt-4 border-0 cursor-pointer"
+                      class="view_more hoverInvert flex justify-start items-center font-bold text-xs w-auto h-auto py-1 px-4 pr-0 mt-4 border-0 cursor-pointer"
                       href="/archive/?sort=Newest&amp;skip=20"
                       ><div class="flex flex-row flex-nowrap gap-2 justify-center items-center">
                         مشاهده مطالب بیشتر
@@ -148,13 +148,13 @@
         <div class="flex flex-col justify-end gap-12">
           <div class="w-full">
             <div class="flex flex-wrap justify-between items-center md:px-12 pr-16 md:pr-16">
-              <div class="Suggest_layer_title relative">
-                <h2 font-size="1.6" font-weight="900">پیشنهاد زومیت</h2>
+              <div class="main_title relative">
+                <span font-size="1.6" font-weight="900">پیشنهاد زومیت</span>
               </div>
               <a
                 variant="text"
                 colorscheme="default"
-                class="view_more flex justify-start items-center font-bold text-xs w-auto h-auto py-1 px-4 pr-0 mt-4 border-0 cursor-pointer"
+                class="view_more hoverInvert flex justify-start items-center font-bold text-xs w-auto h-auto py-1 px-4 pr-0 mt-4 border-0 cursor-pointer"
                 href="/archive/?sort=MostVisited&readingTimeRange=All&publishPeriod=LastMonth&skip=8"
                 ><div class="flex flex-row flex-nowrap gap-2 justify-center items-center">
                   مشاهده همه
@@ -196,7 +196,7 @@ import ZoomitSuggestButtonsArray from '../assets/jsons/ZoomitSuggestButtonsArray
 import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
 </script>
 
-<style>
+<style scoped>
 .ArticleListShow {
   grid-template-columns: 1.5fr 1fr 1fr;
 }
@@ -205,33 +205,6 @@ import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
   background-color: var(--background-2);
 }
 
-.Products_layer_container_col1,
-.Products_layer_container_col2 {
-  -webkit-box-flex: 1;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.Products_layer_title::before,
-.Suggest_layer_title::before,
-.ThreeNews_layer_title::before {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 100%;
-  top: 0px;
-  right: -16px;
-  background-color: var(--primary-1);
-}
-
-.Products_layer_title span,
-.Suggest_layer_title h2,
-.ThreeNews_layer_title span {
-  margin: unset;
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--text);
-}
 .Products_layer_Desc {
   margin: unset;
   font-size: 14px;
@@ -245,33 +218,6 @@ import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
   background-color: var(--button--contained--default-background);
   color: var(--button--contained--default-text);
 }
-.Products_layer_link:hover,
-.ButtonShape:hover,
-.LastContent_layer .view_more:hover {
-  filter: invert(10%);
-}
-
-.ButtonShape {
-  border: solid 1px var(--button--outline--default-border);
-  background-color: transparent;
-  color: var(--button--outline--default-text);
-}
-.ButtonShape.active {
-  background-color: var(--button--contained--default-background);
-  color: var(--button--contained--default-text);
-}
-
-.ComplexTwoCol_layer_content_col_right {
-  flex-basis: 0px;
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  max-width: 100%;
-}
-.LastContent_layer {
-  -webkit-box-flex: 1;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
 
 .LastContent_layer_title {
   margin: unset;
@@ -280,10 +226,6 @@ import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
   color: var(--text);
   line-height: 2;
   font-family: 'Sahel-FD';
-}
-
-.view_more {
-  color: var(--button--text--default-text);
 }
 
 @media (min-width: 576px) {
@@ -341,4 +283,6 @@ import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
     padding-left: 44px;
   }
 }
+
+
 </style>

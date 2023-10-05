@@ -476,7 +476,14 @@
                     v-for="item in mainMenu"
                     :key="item"
                   >
-                    <router-link :to="{ name: 'productItem', params: { item: item.param } }">
+                    <router-link
+                      :to="{
+                        name: 'productItem',
+                        params: { item: item.param },
+                        force: true,
+                        state: { productItemName: item.text }
+                      }"
+                    >
                       <span>{{ item.text }}</span>
                     </router-link>
                   </li>
@@ -504,7 +511,12 @@
                         <ul class="h-full overflow-y-auto overflow-x-hidden py-5 px-8">
                           <li v-for="item in menuCol" :key="item">
                             <router-link
-                              :to="{ name: 'productItem', params: { item: item.param } }"
+                              :to="{
+                                name: 'productItem',
+                                params: { item: item.param },
+                                force: true,
+                                state: { productItemName: item.text }
+                              }"
                             >
                               {{ item.text }}
                             </router-link>
@@ -863,6 +875,10 @@ nav .menu * {
 .row {
   margin-right: -15px;
   margin-left: -15px;
+}
+[class*="col-"]{
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .container {
   max-width: 1300px;

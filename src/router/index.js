@@ -21,7 +21,8 @@ const router = createRouter({
       path: "/product", name: "ProductTemplate", component: ProductTemplate, children: [
         { path: "", name: "product", component: ProductView , meta: { layout: 'product' }},
         { path: "list", redirect: { path: '/product/list/mobile' } },
-        { path: "list/:item", name: "productItem", component: ProductItemView, meta: { layout: 'product' } },        
+        { path: "list/:item", name: "productItem", component: ProductItemView, meta: { layout: 'product' } ,
+      },        
       ]
     },
    
