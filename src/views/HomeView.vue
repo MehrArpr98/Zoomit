@@ -41,7 +41,7 @@
           <div class="Products_layer_container_col2 shrink-0 grow-0 basis-full max-w-full">
             <div class="relative">
               <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
-                <swiper filter_item="" :perView="9" :array="ProductsArray" type="product" />
+                <swiper filter_item="" :perView="9" :array="ProductsTypesArray" type="productType" />
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@ import FilterableSwiper from '../components/FilterableSwiper.vue'
 import ThreeCard from '../components/ThreeCard.vue'
 import LastContentList from '../components/LastContentList.vue'
 
-import ProductsArray from '../assets/jsons/ProductsArray.json'
+import ProductsTypesArray from '../assets/jsons/ProductsTypesArray.json'
 import AdsArray from '../assets/jsons/AdsArray.json'
 import SuggestButtonsArray from '../assets/jsons/SuggestButtonsArray.json'
 import SuggestsArray from '../assets/jsons/SuggestsArray.json'

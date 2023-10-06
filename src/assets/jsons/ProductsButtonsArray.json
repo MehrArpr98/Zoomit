@@ -1,0 +1,42 @@
+[
+    {
+        "val": "",
+        "text": "همه"
+      },
+      {
+        "val": "mobile",
+        "text": "گوشی"
+      },
+      {
+        "val": "tablet",
+        "text": "تبلت"
+      },
+      {
+        "val": "wearables",
+        "text": "ساعت هوشمند"
+      },
+      {
+        "val": "vr",
+        "text": "هدست واقعیت مجازی"
+      },
+      {
+        "val": "camera",
+        "text": "دوربین عکاسی"
+      },
+      {
+        "val": "car",
+        "text": "خودرو"
+      },
+      {
+        "val": "lens",
+        "text": "لنز"
+      },
+      {
+        "val": "gaming-console",
+        "text": "کنسول بازی"
+      },
+      {
+        "val": "tv",
+        "text": "تلویزیون"
+      }
+]

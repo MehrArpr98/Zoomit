@@ -1,0 +1,51 @@
+[
+  {
+    "href": "https://www.zoomit.ir/product/vivo-iqoo-z8-china/",
+    "src": "https://cdn01.zoomit.ir/2023/10/vivo-iqoo-z8-china-silver.jpg?h=150",
+    "title": "vivo iQOO Z8 China",
+    "type": "mobile"
+  },
+  {
+    "href": "https://www.zoomit.ir/product/asus-rog-strix-g16-g614jv-rcore-i7-13650hx-rtx-4060-16gb-512gb/",
+    "src": "https://cdn01.zoomit.ir/2023/5/laptop-asus-rog-strix-g16-g614jv.jpg?h=150",
+    "title": "ASUS ROG Strix G16 G614JV",
+    "type": "laptop"
+  },
+  {
+    "href": "https://www.zoomit.ir/product/samsung-galaxy-watch6-classic/",
+    "src": "https://cdn01.zoomit.ir/2023/7/samsung-galaxy-watch6-classic-black.jpg?h=150",
+    "title": "Samsung Galaxy Watch 6 Classic 43mm",
+    "type": "wearables"
+  },
+  {
+    "href": "https://www.zoomit.ir/product/google-pixel-8-pro/",
+    "src": "https://cdn01.zoomit.ir/2023/10/google-pixel-8-pro-bay.jpg?h=150",
+    "title": "Google Pixel 8 Pro",
+    "type": "mobile"
+  },
+  {
+    "href": "https://www.zoomit.ir/product/google-pixel-8/",
+    "src": "https://cdn01.zoomit.ir/2023/10/google-pixel-8-hazel.jpg?h=150",
+    "title": "Google Pixel 8",
+    "type": "mobile"
+  },
+  {
+    "href": "https://www.zoomit.ir/product/asus-rog-ally-z1-extreme/",
+    "src": "https://cdn01.zoomit.ir/2023/5/asus-rog-ally.jpg?h=150",
+    "title": "ASUS ROG Ally Z1 Extreme",
+    "type": "tv"
+  },
+
+  {
+    "href": "https://www.zoomit.ir/product/samsung-galaxy-a24-4g/",
+    "src": "https://cdn01.zoomit.ir/2023/4/samsung-galaxy-a24-4g-lime-green.jpg?h=150",
+    "title": "Google Pixel 8 Pro",
+    "type": "mobile"
+  },
+  {
+    "href": "https://www.zoomit.ir/product/msi-g281uv-uhd/",
+    "src": "https://cdn01.zoomit.ir/2023/6/msi-g281uv-uhd-front-view.jpg?h=150",
+    "title": "MSI G281UV UHD",
+    "type": "tv"
+  }
+]

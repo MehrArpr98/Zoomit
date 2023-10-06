@@ -53,13 +53,13 @@ defineProps({
 })
 </script>
 <style>
-.suggest-swiper-slide {
+.swiper-slide-quarter {
+  width: 25% !important;
+}
+.suggest-swiper-slide{
   padding-left: 25px;
   width: calc(25% + 6px) !important;
 }
-/* .suggest-swiper-slide:last-child {
-  padding-left: 0;
-} */
 
 .suggestCarousel_Wrapper {
   border-radius: 3px;

@@ -1,12 +1,14 @@
 <template>
   <main>
-    <div class="w-full mt-4 md:mt-8 md:px-12">
+    <div class="w-full mt-4 md:px-12"
+    :class="{ 'md:mt-8' : button_type !== 'link' }">
       <div class="relative">
         <filter-buttons
           @SetFilter="(e) => { filter = e }"
           :filter_item="props.filter_item"
           :type="type"
           :buttons="buttons"
+          :button_type="button_type"
         />
       </div>
     </div>
@@ -36,6 +38,7 @@ const props = defineProps({
   perView: Number,
   array: Array,
   type: String,
-  buttons: Array
+  buttons: Array,
+  button_type: String
 })
 </script>

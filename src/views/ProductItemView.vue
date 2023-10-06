@@ -512,7 +512,7 @@ onUpdated(() => {
   display: none;
 }
 a:hover,
-a:focus {
+a:focus{
   color: #e51a2d;
   text-decoration: none;
 }

@@ -10,19 +10,34 @@
   >
     <swiper-slide
       class="swiper-slide"
-      :class="{ 'suggest-swiper-slide': type !== 'product'  }"
+      :class="{
+        'swiper-slide-quarter': type !== 'productType',
+        'suggest-swiper-slide': type === 'suggest' || type === 'zoomitSuggest'
+      }"
       v-for="item in processed_array"
       :key="item"
     >
-      <component :is="type === 'product' ? ProductSwiperSlide : type === 'suggest'? SuggestSwiperSlide : NewsCard" :item="item" />
+      <component
+        :is="
+          type === 'productType'
+            ? ProductTypeSwiperSlide
+            : type === 'product'
+            ? ProductSlide
+            : type === 'suggest'
+            ? SuggestSwiperSlide
+            : NewsCard
+        "
+        :item="item"
+      />
     </swiper-slide>
   </swiper-container>
 </template>
 <script setup>
 import { getCurrentInstance, onMounted, computed } from 'vue'
 import SuggestSwiperSlide from './SuggestSwiperSlide.vue'
-import ProductSwiperSlide from './ProductSwiperSlide.vue'
-import NewsCard from './NewsCard.vue';
+import ProductTypeSwiperSlide from './ProductTypeSwiperSlide.vue'
+import ProductSlide from './ProductSlide.vue'
+import NewsCard from './NewsCard.vue'
 
 const props = defineProps({
   filter_item: String,
