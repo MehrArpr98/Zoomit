@@ -511,11 +511,11 @@ onUpdated(() => {
 .breadcrump a:last-child:before {
   display: none;
 }
-a:hover,
+/* a:hover,
 a:focus{
   color: #e51a2d;
   text-decoration: none;
-}
+} */
 .productsList label {
   font-family: 'Vazir-Thin';
 }
