@@ -1,4 +1,4 @@
-body[data-theme="light"] {
+body[data-theme='light'] {
   --text: #383e43;
   --text-hover: #e4002b;
   --background-1: #f9f9f9;
@@ -56,91 +56,90 @@ body[data-theme="light"] {
   --button--outline--spinner-border: #afafb6;
 }
 
-body[data-theme="dark"] {
-  --text: #E8E2D8;
-    --text-hover: #ff6961;
-    --background-1: #202425;
-    --background-2: #1d1f20;
-    --card: #292C2D;
-    --primary-1: #e4002b;
-    --primary-2: #ff6961;
-    --success-1: #0fa862;
-    --warning-1: #ff9900;
-    --info: #3d85b7;
-    --black-1: #000000;
-    --black-2: #191923;
-    --black-3: #afafb6;
-    --black-5: #4b4b55;
-    --grey-1: #eeeeee;
-    --grey-3: #afafb6;
-    --grey-5: #7A7878;
-    --grey-6: #292C2D;
-    --grey-7: #383737;
-    --white: #ffffff;
-    --elevation: rgba(28,25,25,0.24);
-    --header--header-background: #1d1f20;
-    --header--mobile-title-background: #292C2D;
-    --header--zoomit-typography: #ffffff;
-    --header--zoomit-logo: #ffffff;
-    --header--menu-link: #E8E2D8;
-    --header--search-icon-background: #ffffff;
-    --header--search-icon: #32323c;
-    --single-article--header-background: #000000;
-    --button--contained--default-text: #E8E2D8;
-    --button--contained--default-background: #383737;
-    --button--contained--default-border: #383737;
-    --button--outline--default-text: #E8E2D8;
-    --button--outline--default-border: #4b4b55;
-    --button--text--default-text: #E8E2D8;
-    --button--contained--secondary-text: #E8E2D8;
-    --button--contained--secondary-background: #383737;
-    --button--contained--secondary-border: #383737;
-    --button--outline--secondary-text: #E8E2D8;
-    --button--outline--secondary-border: #4b4b55;
-    --button--text--secondary-text: #E8E2D8;
-    --button--contained--primary-text: #E8E2D8;
-    --button--contained--primary-background: #e4002b;
-    --button--contained--primary-border: #e4002b;
-    --button--outline--primary-text: #E8E2D8;
-    --button--outline--primary-border: #e4002b;
-    --button--text--primary-text: #E8E2D8;
-    --button--contained--text-disable: #7d7d87;
-    --button--contained--background-disable: #383737;
-    --button--contained--spinner: #ffffff;
-    --button--contained--spinner-border: #afafb6;
-    --button--outline--text-disable: #7d7d87;
-    --button--outline--background-disable: 'transparent';
-    --button--outline--spinner: #32323c;
-    --button--outline--spinner-border: #afafb6;
+body[data-theme='dark'] {
+  --text: #e8e2d8;
+  --text-hover: #ff6961;
+  --background-1: #202425;
+  --background-2: #1d1f20;
+  --card: #292c2d;
+  --primary-1: #e4002b;
+  --primary-2: #ff6961;
+  --success-1: #0fa862;
+  --warning-1: #ff9900;
+  --info: #3d85b7;
+  --black-1: #000000;
+  --black-2: #191923;
+  --black-3: #afafb6;
+  --black-5: #4b4b55;
+  --grey-1: #eeeeee;
+  --grey-3: #afafb6;
+  --grey-5: #7a7878;
+  --grey-6: #292c2d;
+  --grey-7: #383737;
+  --white: #ffffff;
+  --elevation: rgba(28, 25, 25, 0.24);
+  --header--header-background: #1d1f20;
+  --header--mobile-title-background: #292c2d;
+  --header--zoomit-typography: #ffffff;
+  --header--zoomit-logo: #ffffff;
+  --header--menu-link: #e8e2d8;
+  --header--search-icon-background: #ffffff;
+  --header--search-icon: #32323c;
+  --single-article--header-background: #000000;
+  --button--contained--default-text: #e8e2d8;
+  --button--contained--default-background: #383737;
+  --button--contained--default-border: #383737;
+  --button--outline--default-text: #e8e2d8;
+  --button--outline--default-border: #4b4b55;
+  --button--text--default-text: #e8e2d8;
+  --button--contained--secondary-text: #e8e2d8;
+  --button--contained--secondary-background: #383737;
+  --button--contained--secondary-border: #383737;
+  --button--outline--secondary-text: #e8e2d8;
+  --button--outline--secondary-border: #4b4b55;
+  --button--text--secondary-text: #e8e2d8;
+  --button--contained--primary-text: #e8e2d8;
+  --button--contained--primary-background: #e4002b;
+  --button--contained--primary-border: #e4002b;
+  --button--outline--primary-text: #e8e2d8;
+  --button--outline--primary-border: #e4002b;
+  --button--text--primary-text: #e8e2d8;
+  --button--contained--text-disable: #7d7d87;
+  --button--contained--background-disable: #383737;
+  --button--contained--spinner: #ffffff;
+  --button--contained--spinner-border: #afafb6;
+  --button--outline--text-disable: #7d7d87;
+  --button--outline--background-disable: 'transparent';
+  --button--outline--spinner: #32323c;
+  --button--outline--spinner-border: #afafb6;
 }
 
+@font-face {
+  font-family: 'Vazir';
+  src: url('./fonts/Vazir.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Vazir-FD';
+  src: url('./fonts/Vazir-FD.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sahel-FD';
+  src: url('./fonts/Sahel-FD.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Vazir-Thin';
+  src: url('./fonts/Vazir-Thin.ttf') format('truetype');
+}
 
-@font-face {
-  font-family: "Vazir";
-  src: url("./fonts/Vazir.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Vazir-FD";
-  src: url("./fonts/Vazir-FD.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sahel-FD";
-  src: url("./fonts/Sahel-FD.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Vazir-Thin";
-  src: url("./fonts/Vazir-Thin.ttf") format("truetype");
-}
-
-
-html, body {
+html,
+body {
   direction: rtl;
   margin: 0px;
   padding: 0px;
-  font-family: "Vazir" !important;
+  font-family: 'Vazir' !important;
   background-color: var(--background-1);
 }
-.main_title::before{
+.main_title::before {
   content: '';
   position: absolute;
   width: 4px;
@@ -149,41 +148,37 @@ html, body {
   right: -16px;
   background-color: var(--primary-1);
 }
-
-.main_title span{
+.main_title span {
   margin: unset;
   font-size: 16px;
   font-weight: bold;
   color: var(--text);
 }
-.hoverInvert:hover{
+.hoverInvert:hover {
   filter: invert(10%);
 }
 .view_more {
   color: var(--button--text--default-text);
 }
-
-body::-webkit-scrollbar {
+body[data-layout='default']::-webkit-scrollbar {
   width: 3px;
   height: 3px;
 }
-body::-webkit-scrollbar-thumb {
+body[data-layout='default']::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background: var(--grey-3);
 }
 
 @media (min-width: 768px) {
-  body::-webkit-scrollbar-track {
+  body[data-layout='default']::-webkit-scrollbar-track {
     border: 1px solid var(--grey-6);
   }
 
-  body::-webkit-scrollbar-thumb {
+  body[data-layout='default']::-webkit-scrollbar-thumb {
     border-radius: 6px;
   }
-  body::-webkit-scrollbar {
+  body[data-layout='default']::-webkit-scrollbar {
     width: 12px;
     height: 12px;
   }
 }
-
-

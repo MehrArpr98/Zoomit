@@ -26,44 +26,36 @@
         </div>
       </div>
     </div>
-
     <hr class="line-seprator container my-2 border-b border-slate-300" />
-
     <div class="popularProducts products-categorization">
       <div class="container pt-16 pb-9 mx-auto grow px-0">
         <h2 class="font-bold text-2xl text-center mt-0 mb-2.5 block">محبوب‌ترین محصولات</h2>
-        
-          <div class="tabs__content">
-            <filterable-swiper
-              filter_item=""
-              :perView="4"
-              :array="NewestProductsArray"
-              type="product"
-              :buttons="ProductsButtonsArray"
-              button_type="link"
-            />
-          </div>
-        
+        <div class="tabs__content">
+          <filterable-swiper
+            filter_item=""
+            :perView="4"
+            :array="NewestProductsArray"
+            type="product"
+            :buttons="ProductsButtonsArray"
+            button_type="link"
+          />
+        </div>
       </div>
     </div>
-
     <hr class="line-seprator container my-2 border-b border-slate-300" />
-
     <div class="newProducts products-categorization">
       <div class="container pt-16 pb-9 mx-auto grow px-0">
         <h2 class="font-bold text-2xl text-center mt-0 mb-2.5 block">جدیدترین محصولات</h2>
-        
-          <div class="tabs__content">
-            <filterable-swiper
-              filter_item=""
-              :perView="4"
-              :array="NewestProductsArray"
-              type="product"
-              :buttons="ProductsButtonsArray"
-              button_type="link"
-            />
-          </div>
-        
+        <div class="tabs__content">
+          <filterable-swiper
+            filter_item=""
+            :perView="4"
+            :array="NewestProductsArray"
+            type="product"
+            :buttons="ProductsButtonsArray"
+            button_type="link"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -100,7 +92,7 @@ import ProductsButtonsArray from '../assets/jsons/ProductsButtonsArray.json'
   background-color: rgba(0, 0, 0, 0.15) !important;
   z-index: 1;
 }
-.products-categorization .container{
+.products-categorization .container {
   padding-right: 0;
   padding-left: 0;
 }
