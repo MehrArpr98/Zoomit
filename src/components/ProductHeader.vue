@@ -344,77 +344,57 @@
                         </div>
                       </div>
                     </div>
-                    <div class="nav__footer">
+                    <div class="nav__footer flex justify-between items-center px-5 my-5 w-full ">
                       <div class="nav__hot-topics">
-                        <span class="nav__hot-topics-title">
+                        <span class="nav__hot-topics-title ml-4 text-sm">
                           <i class="icon-fire2"></i> موضوعات داغ
                         </span>
-                        <span>
+                        <span class="ml-4 text-sm ">
                           <a
                             href="/product/apple-iphone-13/"
-                            onclick="ga('send','event','TrendingMenu','Click','آیفون ۱۳')"
                             >آیفون ۱۳</a
                           >
                         </span>
-                        <span>
+                        <span class="ml-4 text-sm ">
                           <a
                             href="/product/apple-iphone-14-pro-max/"
-                            onclick="ga('send','event','TrendingMenu','Click','آیفون ۱۴ پرو مکس')"
-                            >آیفون ۱۴ پرو مکس</a
+                               > آیفون ۱۴ پرو مکس </a
                           >
                         </span>
-                        <span>
+                        <span class="ml-4 text-sm ">
                           <a
                             href="/product/samsung-galaxy-a32-5g/"
-                            onclick="ga('send','event','TrendingMenu','Click','سامسونگ A32')"
-                            >سامسونگ A32</a
+                             > سامسونگ A32</a
                           >
                         </span>
-                        <span>
+                        <span class="ml-4 text-sm ">
                           <a
                             href="/product/samsung-galaxy-a13/"
-                            onclick="ga('send','event','TrendingMenu','Click','گوشی A13')"
                             >گوشی A13</a
                           >
                         </span>
-                        <span>
+                        <span class="ml-4 text-sm ">
                           <a
                             href="/product/samsung-galaxy-a12/"
-                            onclick="ga('send','event','TrendingMenu','Click','قیمت A12')"
                             >قیمت A12</a
                           >
                         </span>
                       </div>
                       <div class="nav__footer-us">
-                        <div class="nav__footer-social">
-                          <span> زومیت در شبکه های اجتماعی : </span>
-                          <a href="https://www.instagram.com/thezoomit/">
-                            <i class="icon-instagram-logo"> </i>
-                          </a>
-                          <a href="https://t.me/thezoomit/">
-                            <i class="icon-telegram-logo"> </i>
-                          </a>
-                          <a href="https://twitter.com/thezoomit/">
-                            <i class="icon-twitter-logo"> </i>
-                          </a>
-                          <a href="https://www.zoomit.ir/feed/"> <i class="icon-rss-logo"> </i> </a>
-                          <a href="https://www.youtube.com/zoomittv/">
-                            <i class="icon-youtube fa-lg"> </i>
-                          </a>
-                        </div>
-                        <ul>
-                          <li>
+ 
+                        <ul class="flex justify-between items-center m-0">
+                          <li class="bg-zinc-900 py-1 px-3 mr-2.5 mt-0 rounded-full">
                             <a href="/about-us/"> <span> درباره ما </span> </a>
                           </li>
-                          <li>
+                          <li class="bg-zinc-900 py-1 px-3 mr-2.5 mt-0 rounded-full">
                             <a href="/contact-us/"> <span> تماس با ما </span> </a>
                           </li>
-                          <li>
+                          <li class="bg-zinc-900 py-1 px-3 mr-2.5 mt-0 rounded-full">
                             <a href="https://www.zoomit.ir/advertisement/">
                               <span> تبلیغات </span>
                             </a>
                           </li>
-                          <li>
+                          <li class="bg-zinc-900 py-1 px-3 mr-2.5 mt-0 rounded-full">
                             <a href="https://www.zoomit.ir/hire/"> <span> استخدام </span> </a>
                           </li>
                         </ul>
@@ -541,35 +521,7 @@
                 <span class="cursor-pointer flex items-center w-4 h-4">
                   <img class="w-full h-full" src="../assets/svgs/share.svg" />
                 </span>
-                <!--   <div class="menu__share-box">
-                    <span> عضویت در خبرنامه </span>
-                    <form action="/cms/newsletter/subscribe/" id="frm_newletter1" method="post">
-                      <input
-                        name="__RequestVerificationToken"
-                        type="hidden"
-                        value="swNAEWFHE8ymQQwrLS429q_JbeI3m_3IyZLsWYlKpFh-0IryakSjaUCNWTvCLrJSCCnM7WcMX0dtg75rfmBO8xI-emcKkOM4quVAAp9NIBY1"
-                      />
-                      <div class="menu__share-email">
-                        <input name="Email" type="text" placeholder="ایمیل خود را وارد کنید" />
-                        <button type="submit" class="button">تایید</button>
-                      </div>
-                    </form>
-  
-                    <div class="menu__share-social">
-                      <span> زومیت در شبکه های اجتماعی : </span>
-                      <a href="https://www.instagram.com/thezoomit/">
-                        <i class="icon-instagram-logo"> </i>
-                      </a>
-                      <a href="https://t.me/thezoomit/"> <i class="icon-telegram-logo"> </i> </a>
-                      <a href="https://twitter.com/thezoomit/">
-                        <i class="icon-twitter-logo"> </i>
-                      </a>
-                      <a href="https://www.zoomit.ir/feed/"> <i class="icon-rss-logo"> </i> </a>
-                      <a href="https://www.youtube.com/zoomittv/">
-                        <i class="icon-youtube fa-lg"> </i>
-                      </a>
-                    </div>
-                  </div> -->
+                
               </li>
               <li>
                 <span class="cursor-pointer flex items-center w-8 h-10">
@@ -733,19 +685,7 @@ const menuCol = [
     text: 'رم'
   }
 ]
-/* $('#frm_newletter1').submit(function (e) {
-    var form = $(this)
-    var url = form.attr('action')
-    $.ajax({
-      type: 'POST',
-      url: url,
-      data: form.serialize(),
-      success: function (data) {
-        showAlert(data.messages)
-      }
-    })
-    e.preventDefault()
-  }) */
+
 </script>
 <style>
 button.js-toggle-search {
@@ -1153,6 +1093,17 @@ nav .menu .right-menu ul.menuList li:last-child .subMegaMenu a::after {
   height: calc(90vh - 62px);
   padding: inherit !important;
 }
+.nav__footer .nav__hot-topics span.nav__hot-topics-title {
+    color: #A8A7A7;
+}
+icon-fire2:before {
+    content: "\ef55";
+}
+.nav__footer .nav__hot-topics span.nav__hot-topics-title i {
+    color: #ff0025;
+    font-size: 16px;
+}
+
 
 @media (max-width: 1300px) {
   .container {

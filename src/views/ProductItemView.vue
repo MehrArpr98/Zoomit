@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="row flex flex-wrap">
-      <div class="col-3 w-1/4 basis-1/4 c-side-bar">
+      <div class="productsList__side-bar col-3 w-1/4 basis-1/4 c-side-bar">
         <div class="relative">
           <div class="">
             <div class="optionsContainer optionList border-b border-slate-300 mb-3">
@@ -98,10 +98,10 @@
                     </div>
                   </div>
                   <div id="multi_range" class="mb-8 mt-3 relative">
-                    <span :style="`left: ${percentRight}%`" class="z-20">
+                    <span :style="`left: ${percentRight / 2}%`" class="z-20">
                       {{ formatted_price((percentRight / 100) * 128_900_000) }}
                     </span>
-                    <span :style="`right: ${percentLeft}%`">
+                    <span :style="`right: ${percentLeft / 2}%`">
                       {{ formatted_price(((100 - percentLeft) / 100) * 128_900_000) }}</span
                     >
                     <span class="left-0"> 0</span>
@@ -480,10 +480,10 @@ const setRightValue = () => {
 }
 
 onMounted(() => {
-  product_item_name.value = window.history.state.productItemName
+  product_item_name.value = window.history.state.productItemName ? window.history.state.productItemName : 'گوشی'
 })
 onUpdated(() => {
-  product_item_name.value = window.history.state.productItemName
+  product_item_name.value = window.history.state.productItemName ? window.history.state.productItemName : 'گوشی'
 })
 </script>
 <style>
@@ -691,7 +691,7 @@ a:focus{
   font-size: 23px;
   font-weight: bold;
 }
-.checkbox input[type='checkbox']:checked ~ label::after {
+/* .checkbox input[type='checkbox']:checked ~ label::after {
   content: '';
   width: 8px;
   height: 8px;
@@ -701,7 +701,7 @@ a:focus{
   right: 4px;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-}
+} */
 .checkbox label::after {
   display: inline-block;
   position: absolute;
@@ -724,4 +724,21 @@ a:focus{
 
 @media (min-width: 768px) {
 }
+@media (min-width: 1300px){
+  .productsList .productsList__results {
+    width: calc(100% - 236px);
+    -ms-flex-preferred-size: calc(100% - 236px);
+    flex-basis: calc(100% - 236px);
+    max-width: calc(100% - 236px);
+    position: relative;
+}
+.productsList__side-bar {
+    width: 236px;
+    -ms-flex-preferred-size: 236px;
+    flex-basis: 236px;
+    max-width: 236px;
+    padding-right: 0;
+}
+}
+
 </style>
