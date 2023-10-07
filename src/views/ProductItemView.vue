@@ -1,5 +1,27 @@
 <template>
-  <!-- <div class="pt-20"> {{ this.$route.params.item }}</div> -->
+  <template v-if="show_loader">
+    <div class="w-screen h-screen flex flex-col justify-center text-center fixed inset-0">
+      <div class="">
+        <svg
+          aria-hidden="true"
+          role="status"
+          class="inline w-10 h-10 mr-1 text-white animate-spin"
+          viewBox="0 0 100 101"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+            fill="#E5E7EB"
+          />
+          <path
+            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </div>
+  </template>
+
   <div class="container productsList mt-16 mx-auto grow" data-bind="with: productsFilter">
     <div class="breadcrump pt-0">
       <router-link :to="{ name: 'home' }"> زومیت </router-link>
@@ -28,7 +50,7 @@
           <select
             class="bg-white text-xs text-black h-8 border border-black"
             id="sortDropdown1"
-            v-model="sort_based"
+            v-model="filters.sort_based"
           >
             <option value="0">محبوب‌ترین</option>
             <option value="1">جدید‌ترین</option>
@@ -60,54 +82,21 @@
                 </ul>
               </div>
             </div>
+
             <div class="priceRangeInFilter priceRange border-b border-slate-300 mb-3 pb-3">
               <span dir="rtl" class="priceRange__title text-gray-400 text-sm font-normal block"
                 >محدوده قیمت (تومان)</span
               >
-              <div class="rangeSlider mt-3 w-full">
-                <div class="middle relative inline-block w-full">
-                  <div class="multi-range-slider">
-                    <input
-                      type="range"
-                      id="input-left"
-                      class="range2 absolute w-full opacity-0 h-1.5"
-                      v-model="myLeft"
-                      @input="setLeftValue()"
-                    />
-                    <input
-                      type="range"
-                      id="input-right"
-                      class="range2 absolute w-full opacity-0 h-1.5"
-                      v-model="myRight"
-                      @input="setRightValue()"
-                    />
-                    <div class="slider relative mx-4 h-1.5">
-                      <div class="track absolute -inset-x-4 -top-0.5 bottom-0.5 rounded-md"></div>
-                      <div
-                        class="range absolute inset-x-0 -top-0.5 bottom-0.5"
-                        :style="`left: ${percentRight - 1}%; right: ${percentLeft - 1}%`"
-                      ></div>
-                      <div
-                        class="thumb left absolute w-3.5 h-3.5 rounded-full z-30 -translate-x-4 -translate-y-1.5"
-                        :style="`left: ${percentRight}%`"
-                      ></div>
-                      <div
-                        class="thumb right absolute w-3.5 h-3.5 rounded-full z-30 translate-x-4 -translate-y-1.5"
-                        :style="`right: ${percentLeft}%`"
-                      ></div>
-                    </div>
-                  </div>
-                  <div id="multi_range" class="mb-8 mt-3 relative">
-                    <span :style="`left: ${percentRight / 2}%`" class="z-20">
-                      {{ formatted_price((percentRight / 100) * 128_900_000) }}
-                    </span>
-                    <span :style="`right: ${percentLeft / 2}%`">
-                      {{ formatted_price(((100 - percentLeft) / 100) * 128_900_000) }}</span
-                    >
-                    <span class="left-0"> 0</span>
-                  </div>
-                </div>
-              </div>
+              <range-slider
+                :reset_percents="reset_percents"
+                @set_reset_percents="(e) => reset_percents = e"
+                @prices="
+                  (e,f) => {
+                    filters.max_price = e
+                    filters.min_price = f
+                  }
+                "
+              />
             </div>
             <div
               class="optionsContainer optionList border-b border-slate-300 mb-3"
@@ -172,7 +161,6 @@
                 >
                   محصولی با این مشخصات یافت نشد
                 </div>
-
                 <div
                   v-for="(product, index) in proccessed_products"
                   :key="product"
@@ -261,14 +249,20 @@
   </div>
 </template>
 <script setup>
-import { ref, reactive, onMounted, onUpdated, computed } from 'vue'
-const product_item_name = ref('')
+import { ref, reactive, onMounted, onUpdated, computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import RangeSlider from '../components/RangeSlider.vue'
 
-const myLeft = ref(0)
-const myRight = ref(100)
-const percentLeft = ref(0)
-const percentRight = ref(0)
-const sort_based = ref('0')
+const route = useRoute()
+const show_loader = ref(false)
+const reset_percents = ref(false)
+const filters = reactive({
+  min_price: 0,
+  max_price: 128_900_000,
+  sort_based: '0'
+})
+const product_item_name = ref('')
+const product_item_type = ref('')
 
 const filterItems = ref([
   {
@@ -354,6 +348,7 @@ const filterItems = ref([
 const products = reactive([
   {
     inCompare: false,
+    type: 'mobile',
     rate: 9,
     href: '/product/apple-iphone-14-pro-max/',
     src: 'https://cdn01.zoomit.ir/2022/9/iphone-14-pro-max-purple-1.jpg?w=260',
@@ -363,6 +358,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 9,
     href: '/product/apple-iphone-14-pro/',
     src: 'https://cdn01.zoomit.ir/2022/9/apple-iphone-14-pro-gold.jpg?w=200',
@@ -372,6 +368,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 7,
     href: '/product/apple-iphone-14/',
     src: 'https://cdn01.zoomit.ir/2022/9/iphone-14-front-back.jpg?w=200',
@@ -381,6 +378,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 7,
     href: '/product/apple-iphone-se-3/',
     src: 'https://cdn01.zoomit.ir/2022/3/apple-iphone-se-2022-midnight-front-back.jpg?w=200',
@@ -390,6 +388,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 8,
     href: '/product/apple-iphone-11/',
     src: 'https://cdn01.zoomit.ir/2022/2/apple-iphone-11-purple.jpg?w=200',
@@ -399,6 +398,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 9,
     href: '/product/apple-iphone-12-pro-max/',
     src: 'https://cdn01.zoomit.ir/2022/2/apple-iphone-12-pro-max-pacific-blue.jpg?w=200',
@@ -408,6 +408,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 9,
     href: '/product/apple-iphone-13-pro-max/',
     src: 'https://cdn01.zoomit.ir/2021/9/iphone-13-pro-silver-front-back.jpg?w=200',
@@ -417,6 +418,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 8,
     href: '/product/apple-iphone-13/',
     src: 'https://cdn01.zoomit.ir/2021/9/apple-iphone-13-front.jpg?w=200',
@@ -426,6 +428,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 8,
     href: '/product/apple-iphone-12-pro/',
     src: 'https://cdn01.zoomit.ir/2022/2/apple-iphone-12-pro.jpg?w=200',
@@ -435,6 +438,7 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 9,
     href: '/product/apple-iphone-13-pro/',
     src: 'https://cdn01.zoomit.ir/2021/9/iphone-13-pro-blue-front-back.jpg?w=200',
@@ -444,46 +448,125 @@ const products = reactive([
   },
   {
     inCompare: false,
+    type: 'mobile',
     rate: 8,
     href: '/product/apple-iphone-13-mini/',
     src: 'https://cdn01.zoomit.ir/2021/9/iphone-13-product-red-front-back.jpg?w=200',
     title: 'گوشی آیفون 13 مینی اپل',
     titleEN: 'Apple iPhone 13 mini',
     price: 50700000
+  },
+  {
+    inCompare: false,
+    type: 'laptop',
+    rate: 9,
+    href: '/product/apple-macbook-pro-16-2021-m1-pro-max-32gb-1tb/',
+    src: 'https://cdn01.zoomit.ir/2021/10/macbook-pro-16-inch-front.jpg?w=200',
+    title: 'لپ تاپ مک بوک پرو 16 اینچی 2021 اپل - M1 Max 32GB 1TB',
+    titleEN: 'Apple MacBook Pro 16 2021 M1 Max',
+    price: 128000000
+  },
+  {
+    inCompare: false,
+    type: 'laptop',
+    rate: 6,
+    href: '/product/apple-macbook-pro-14-2021-m1-pro-16gb-512gb/',
+    src: 'https://cdn01.zoomit.ir/2021/10/macbook-pro-14-inch-front.jpg?w=200',
+    title: 'لپ تاپ مک بوک پرو 14 اینچی 2021 اپل - M1 Pro 16GB 512GB',
+    titleEN: 'Apple MacBook Pro 14 2021 M1 Pro',
+    price: 84000000
+  },
+
+  {
+    inCompare: false,
+    type: 'laptop',
+    rate: 7,
+    href: '/product/apple-macbook-pro-13-2022-m2-8gb-256gb/',
+    src: 'https://cdn01.zoomit.ir/2022/6/apple-macbook-pro-m2-silver.jpg?w=200',
+    title: 'لپ تاپ مک بوک پرو 13 اینچی 2022 اپل - M2 8GB 256GB',
+    titleEN: 'Apple MacBook Pro 13 2022 M2',
+    price: 54000000
+  },
+  {
+    inCompare: false,
+    type: 'laptop',
+    rate: 8,
+    href: '/product/macbook-air-2022-m2-m2-8gb-512gb/',
+    src: 'https://cdn01.zoomit.ir/2022/6/apple-macbook-air-m2-midnight.jpg?w=200',
+    title: 'لپ تاپ مک بوک ایر 2022 اپل - M2 8GB 512GB',
+    titleEN: 'Apple MacBook Air 2022 M2',
+    price: 66787000
   }
 ])
+let proccessed_products = products
 
-const proccessed_products = computed(() => {
+function delayFunc() {
+  show_loader.value = true
+  setTimeout(async () => {
+    show_loader.value = false
+  }, 2000)
+}
+
+async function filterProducts() {
   let newArr = products
-  if (sort_based.value == '1') newArr.sort((a, b) => b.price - a.price)
-  else if (sort_based.value == '2') newArr.sort((a, b) => a.price - b.price)
-  else if (sort_based.value == '3') newArr.sort((a, b) => b.price - a.price)
-  else if (sort_based.value == '4') newArr.sort((a, b) => b.rate - a.rate)
+  newArr = newArr.filter(
+    (item) =>
+      item.type === product_item_type.value &&
+      item.price >= filters.min_price &&
+      item.price <= filters.max_price
+  )
+  if (filters.sort_based == '1') newArr.sort((a, b) => b.price - a.price)
+  else if (filters.sort_based == '2') newArr.sort((a, b) => a.price - b.price)
+  else if (filters.sort_based == '3') newArr.sort((a, b) => b.price - a.price)
+  else if (filters.sort_based == '4') newArr.sort((a, b) => b.rate - a.rate)
+  proccessed_products = newArr
 
-  return newArr
+
+}
+
+watch(
+  filters,
+  async () => {
+    await delayFunc()
+    filterProducts()
+    window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+  },
+  { deep: true }
+)
+
+watch(product_item_type, () => {
+  filters.min_price = 0
+  filters.max_price = 128_900_000
+  filters.sort_based = '0'
+  reset_percents.value = true
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
 })
 
 const formatted_price = computed(() => (number) => number.toLocaleString('en-US'))
 
-const setLeftValue = () => {
-  const [min, max] = [0, 100]
-  myLeft.value = Math.min(myLeft.value, myRight.value - 1)
-  const percent = ((myLeft.value - min) / (max - min)) * 100
-  percentLeft.value = percent
-}
-
-const setRightValue = () => {
-  const [min, max] = [0, 100]
-  myRight.value = Math.max(myRight.value, myLeft.value + 1)
-  const percent = ((100 - myRight.value - min) / (max - min)) * 100
-  percentRight.value = percent
-}
-
 onMounted(() => {
-  product_item_name.value = window.history.state.productItemName ? window.history.state.productItemName : 'گوشی'
+  product_item_type.value = route.params.item
+
+  product_item_name.value = window.history.state.productItemName
+    ? window.history.state.productItemName
+    : 'گوشی'
+
+  filterProducts()
 })
 onUpdated(() => {
-  product_item_name.value = window.history.state.productItemName ? window.history.state.productItemName : 'گوشی'
+  product_item_type.value = route.params.item
+
+  product_item_name.value = window.history.state.productItemName
+    ? window.history.state.productItemName
+    : 'گوشی'
+
+  filterProducts()
 })
 </script>
 <style>
@@ -724,21 +807,20 @@ a:focus{
 
 @media (min-width: 768px) {
 }
-@media (min-width: 1300px){
+@media (min-width: 1300px) {
   .productsList .productsList__results {
     width: calc(100% - 236px);
     -ms-flex-preferred-size: calc(100% - 236px);
     flex-basis: calc(100% - 236px);
     max-width: calc(100% - 236px);
     position: relative;
-}
-.productsList__side-bar {
+  }
+  .productsList__side-bar {
     width: 236px;
     -ms-flex-preferred-size: 236px;
     flex-basis: 236px;
     max-width: 236px;
     padding-right: 0;
+  }
 }
-}
-
 </style>

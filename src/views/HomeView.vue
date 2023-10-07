@@ -22,26 +22,29 @@
                   </div>
                 </div>
               </div>
-
               <span class="mr-0 md:mr-4 Products_layer_Desc"
                 >زومیت شما را برای انتخاب بهتر و خرید ارزان‌تر راهنمایی می‌کند</span
-              ><a
-                variant="contained"
-                colorscheme="default"
-                target="_blank"
+              >
+              <router-link
                 class="Products_layer_link hoverInvert py-2 px-4 flex justify-center items-center cursor-pointer border-0 w-fit h-fit text-xs font-black"
-                href="/product/"
+                :to="{ name: 'product' }"
+                target="_blank"
               >
                 <div class="flex flex-row justify-center items-center gap-4">
                   ورود به بخش محصولات
                   <img src="../assets/svgs/arrow-left.svg" alt="arrow-left-img" /></div
-              ></a>
+              ></router-link>
             </div>
           </div>
           <div class="Products_layer_container_col2 shrink-0 grow-0 basis-full max-w-full">
             <div class="relative">
               <div class="mx-auto relative overflow-hidden p-0 z-10 list-none touch-pan-y">
-                <swiper filter_item="" :perView="9" :array="ProductsTypesArray" type="productType" />
+                <swiper
+                  filter_item=""
+                  :perView="9"
+                  :array="ProductsTypesArray"
+                  type="productType"
+                />
               </div>
             </div>
           </div>
@@ -283,6 +286,4 @@ import ZoomitSuggestsArray from '../assets/jsons/ZoomitSuggestsArray.json'
     padding-left: 44px;
   }
 }
-
-
 </style>

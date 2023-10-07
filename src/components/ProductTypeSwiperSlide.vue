@@ -1,14 +1,22 @@
 <template>
-  <a class="ProductCarousel_link" :href="item.link"
-    ><div class="ProductCarousel_Wrapper flex flex-col flex-wrap justify-center items-center">
+  <router-link
+    class="ProductCarousel_link"
+    :to="{
+      name: 'productItem',
+      params: { item: item.link },
+      force: true,
+      state: { productItemName: item.text }
+    }"
+  >
+    <div class="ProductCarousel_Wrapper flex flex-col flex-wrap justify-center items-center">
       <div class="ProductCarousel_IconWrapper">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 80">
           <path :d="item.path" fill-rule="evenodd"></path>
         </svg>
       </div>
       <span class="ProductCarousel_Text">{{ item.text }}</span>
-    </div></a
-  >
+    </div>
+  </router-link>
 </template>
 <script setup>
 defineProps({
