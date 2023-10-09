@@ -1,51 +1,51 @@
 [
   {
-    "href": "/mobile/",
-    "title": " گوشی موبایل"
+    "href": "mobile",
+    "title": "گوشی"
   },
   {
-    "href": "/tablet/",
+    "href": "tablet",
     "title": "تبلت"
   },
   {
-    "href": "/laptop/",
+    "href": "laptop",
     "title": "لپ‌تاپ"
   },
   {
-    "href": "/tv/",
+    "href": "tv",
     "title": "تلویزیون"
   },
   {
-    "href": "/wearables/",
+    "href": "wearables",
     "title": "ساعت و دستنبد هوشمند"
   },
 
   {
-    "href": "/hardware/",
+    "href": "hardware",
     "title": "سخت افزار"
   },
   {
-    "href": "/tech-iran/",
+    "href": "tech-iran",
     "title": "فناوری ایران"
   },
   {
-    "href": "/software-application/",
+    "href": "software-application",
     "title": "نرم افزار و اپلیکیشن"
   },
   {
-    "href": "/os/",
+    "href": "os",
     "title": " سیستم عامل"
   },
   {
-    "href": "/internet-network/",
+    "href": "internet-network",
     "title": "اینترنت و شبکه"
   },
   {
-    "href": "/gaming/",
+    "href": "gaming",
     "title": " بازی"
   },
   {
-    "href": "/cryptocurrency/",
+    "href": "cryptocurrency",
     "title": "ارز دیجیتال"
   }
 ]

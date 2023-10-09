@@ -65,7 +65,8 @@
                 </div>
               </div></router-link
             >
-
+            
+           
             <router-link
               :to="{ name: 'home' }"
               @mousemove="hoverSubmenuIndex = 1"
@@ -94,9 +95,15 @@
                       v-for="item in submenuItems1"
                       :key="item"
                     >
-                      <a :href="item.href"
-                        ><span> {{ item.title }} </span></a
-                      >
+                     
+                      <router-link
+                        :to="{
+                          name: 'homeItem',
+                          params: { item: item.href },
+                          force: true,
+                          state: { productItemName: item.title }
+                        }"
+                        ><span> {{ item.title }} </span></router-link>
                     </div>
                   </div>
                 </div>
