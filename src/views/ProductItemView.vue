@@ -29,7 +29,7 @@
       <router-link
         :to="{
           name: 'productItem',
-          params: { item: this.$route.params.item },
+          params: { item: route.params.item },
           force: true,
           state: { productItemName: product_item_name }
         }"
