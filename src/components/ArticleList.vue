@@ -30,7 +30,7 @@ import ArticlesArray from '../assets/jsons/ArticlesArray.json'
 const articleList = ArticlesArray
 </script>
 
-<style>
+<style scoped>
 .ArticleListShowCase:first-child {
   aspect-ratio: 3 / 2;
 }

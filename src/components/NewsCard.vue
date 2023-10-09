@@ -1,6 +1,5 @@
 <template>
-
-<article
+  <article
     class="relative overflow-hidden cursor-pointer"
     :class="'ThreeNews_layer_ArticleImageCard' + (index + 1)"
   >
@@ -19,9 +18,9 @@
           </div>
           <div class="flex flex-wrap justify-center items-center gap-1">
             <svg width="12" height="12">
-                <use href="../assets/svgs/calendar.svg#svg" id="whitCalendar_icon" />
-              </svg>
-           <span class="ThreeNews_layer_ArticleImageCard_footerRight fa">
+              <use href="../assets/svgs/calendar.svg#svg" id="whitCalendar_icon" />
+            </svg>
+            <span class="ThreeNews_layer_ArticleImageCard_footerRight fa">
               {{ item.dateRelease }}
             </span>
           </div>
@@ -39,14 +38,13 @@
 </template>
 
 <script setup>
- defineProps({
+defineProps({
   item: Object,
-  index : {
+  index: {
     type: Number,
     default: 1
-  },
-}) 
-
+  }
+})
 </script>
 
 <style>
@@ -58,29 +56,48 @@
   height: 200px;
   aspect-ratio: 3 / 2;
 }
+.ThreeNews_layer_ArticleImageCard4 {
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+}
 .ThreeNews_layer_ArticleImageCard1:hover img,
 .ThreeNews_layer_ArticleImageCard2:hover img,
-.ThreeNews_layer_ArticleImageCard3:hover img {
+.ThreeNews_layer_ArticleImageCard3:hover img,
+.ThreeNews_layer_ArticleImageCard4:hover img {
   transform: scale(1.1);
 }
 
 .ThreeNews_layer_ArticleImageCard1 article,
 .ThreeNews_layer_ArticleImageCard2 article,
-.ThreeNews_layer_ArticleImageCard3 article {
+.ThreeNews_layer_ArticleImageCard3 article,
+.ThreeNews_layer_ArticleImageCard4 article {
   background-color: rgba(25, 25, 35, 0.5);
 }
 
 .ThreeNews_layer_ArticleImageCard1 .title,
 .ThreeNews_layer_ArticleImageCard2 .title,
-.ThreeNews_layer_ArticleImageCard3 .title {
+.ThreeNews_layer_ArticleImageCard3 .title,
+.ThreeNews_layer_ArticleImageCard4 .title {
   margin: auto;
   font-size: 16px;
   font-weight: bold;
   color: var(--white);
   line-height: 1.8;
 }
-.ThreeNews_layer_ArticleImageCard1 .title {
+.ThreeNews_layer_ArticleImageCard1 .title,
+.ThreeNews_layer_ArticleImageCard4 .title {
   font-size: 22px;
+}
+
+.ThreeNews_layer_ArticleImageCard4 .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: 'Sahel-FD', serif;
 }
 
 .ThreeNews_layer_ArticleImageCard_footerRight {
@@ -90,7 +107,7 @@
   color: var(--white);
   font-family: 'Vazir-FD';
 }
-#whitCalendar_icon{
+#whitCalendar_icon {
   fill: var(--white);
 }
 
