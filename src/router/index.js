@@ -9,8 +9,9 @@ import ProductItemView from '../views/ProductItemView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    { path: "/", redirect: { name: 'home' } },
     {
-      path: '/',
+      path: '/Zoomit/',
       name: 'home',
       component: HomeView,
       meta: {
@@ -18,7 +19,7 @@ const router = createRouter({
       }
     },
     {
-      path: "/product", name: "ProductTemplate", component: ProductTemplate, children: [
+      path: "/Zoomit/product", name: "ProductTemplate", component: ProductTemplate, children: [
         { path: "", name: "product", component: ProductView , meta: { layout: 'product' }},
         { path: "list", redirect: { path: '/product/list/mobile' } },
         { path: "list/:item", name: "productItem", component: ProductItemView, meta: { layout: 'product' } ,
