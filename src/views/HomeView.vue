@@ -28,7 +28,6 @@
               <router-link
                 class="Products_layer_link hoverInvert py-2 px-4 flex justify-center items-center cursor-pointer border-0 w-fit h-fit text-xs font-black"
                 :to="{ name: 'product' }"
-                target="_blank"
               >
                 <div class="flex flex-row justify-center items-center gap-4">
                   ورود به بخش محصولات
