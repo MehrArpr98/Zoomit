@@ -4,47 +4,47 @@
     "title": " مقایسه محصولات"
   },
   {
-    "href": "/product/list/mobile/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
-    "title": " گوشی موبایل "
+    "href": "mobile",
+    "title": "گوشی"
   },
   {
-    "href": "/product/list/tablet/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "tablet",
     "title": "تبلت"
   },
   {
-    "href": "/product/list/laptop/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "laptop",
     "title": "لپ‌تاپ"
   },
   {
-    "href": "/product/list/tv/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "tv",
     "title": "تلویزیون"
   },
   {
-    "href": "/product/list/wearables/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "wearables",
     "title": "هوشمند ساعت "
   },
   {
-    "href": "/product/list/gaming-console/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "gaming-console",
     "title": "کنسول بازی"
   },
   {
-    "href": "/product/list/hdd/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "hdd",
     "title": "هارد دیسک"
   },
   {
-    "href": "/product/list/headphone/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "headphone",
     "title": "هندزفری و هدفون"
   },
   {
-    "href": "/product/list/vga/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "vga",
     "title": " کارت گرافیک "
   },
   {
-    "href": "/product/list/cpu/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "cpu",
     "title": "پردازنده "
   },
   {
-    "href": "/product/list/camera/?utm_source=MagHP&amp;utm_medium=referral_menu&amp;utm_campaign=main_menu",
+    "href": "camera",
     "title": "دوربین‌ عکاسی "
   }
 ]

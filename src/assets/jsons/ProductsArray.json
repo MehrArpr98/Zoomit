@@ -1,0 +1,147 @@
+[
+  {
+    "type": "mobile",
+    "rate": 9,
+    "href": "/product/apple-iphone-14-pro-max/",
+    "src": "https://cdn01.zoomit.ir/2022/9/iphone-14-pro-max-purple-1.jpg?w=260",
+    "title": "گوشی آیفون 14 پرو مکس اپل",
+    "titleEn": "Apple iPhone 14 Pro Max",
+    "price": 59250000
+  },
+  {
+    "type": "mobile",
+    "rate": 9,
+    "href": "/product/apple-iphone-14-pro/",
+    "src": "https://cdn01.zoomit.ir/2022/9/apple-iphone-14-pro-gold.jpg?w=200",
+    "title": "گوشی آیفون 14 پرو اپل",
+    "titleEn": "Apple iPhone 14 Pro",
+    "price": 52400000
+  },
+  {
+    "type": "mobile",
+    "rate": 7,
+    "href": "/product/apple-iphone-14/",
+    "src": "https://cdn01.zoomit.ir/2022/9/iphone-14-front-back.jpg?w=200",
+    "title": "گوشی آیفون 14 اپل",
+    "titleEn": "Apple iPhone 14",
+    "price": 44550000
+  },
+  {
+    "type": "mobile",
+    "rate": 7,
+    "href": "/product/apple-iphone-se-3/",
+    "src": "https://cdn01.zoomit.ir/2022/3/apple-iphone-se-2022-midnight-front-back.jpg?w=200",
+    "title": "گوشی آیفون SE 2022 اپل",
+    "titleEn": "Apple iPhone SE 2022",
+    "price": 29400000
+  },
+  {
+    "type": "mobile",
+    "rate": 8,
+    "href": "/product/apple-iphone-11/",
+    "src": "https://cdn01.zoomit.ir/2022/2/apple-iphone-11-purple.jpg?w=200",
+    "title": "گوشی آیفون 11 اپل",
+    "titleEn": "Apple iPhone 11",
+    "price": 27229000
+  },
+  {
+    "type": "mobile",
+    "rate": 9,
+    "href": "/product/apple-iphone-12-pro-max/",
+    "src": "https://cdn01.zoomit.ir/2022/2/apple-iphone-12-pro-max-pacific-blue.jpg?w=200",
+    "title": "گوشی آیفون 12 پرو مکس اپل",
+    "titleEn": "Apple iPhone 12 Pro Max",
+    "price": 48050000
+  },
+  {
+    "type": "mobile",
+    "rate": 9,
+    "href": "/product/apple-iphone-13-pro-max/",
+    "src": "https://cdn01.zoomit.ir/2021/9/iphone-13-pro-silver-front-back.jpg?w=200",
+    "title": "گوشی آیفون 13 پرو مکس اپل",
+    "titleEn": "Apple iPhone 13 Pro Max",
+    "price": 64050000
+  },
+  {
+    "type": "mobile",
+    "rate": 8,
+    "href": "/product/apple-iphone-13/",
+    "src": "https://cdn01.zoomit.ir/2021/9/apple-iphone-13-front.jpg?w=200",
+    "title": "گوشی آیفون 13 اپل",
+    "titleEn": "Apple iPhone 13",
+    "price": 42000000
+  },
+  {
+    "type": "mobile",
+    "rate": 8,
+    "href": "/product/apple-iphone-12-pro/",
+    "src": "https://cdn01.zoomit.ir/2022/2/apple-iphone-12-pro.jpg?w=200",
+    "title": "گوشی آیفون 12 پرو اپل",
+    "titleEn": "Apple iPhone 12 Pro",
+    "price": 35950000
+  },
+  {
+    "type": "mobile",
+    "rate": 9,
+    "href": "/product/apple-iphone-13-pro/",
+    "src": "https://cdn01.zoomit.ir/2021/9/iphone-13-pro-blue-front-back.jpg?w=200",
+    "title": "گوشی آیفون 13 پرو اپل",
+    "titleEn": "Apple iPhone 13 pro",
+    "price": 60290000
+  },
+  {
+    "type": "mobile",
+    "rate": 8,
+    "href": "/product/apple-iphone-13-mini/",
+    "src": "https://cdn01.zoomit.ir/2021/9/iphone-13-product-red-front-back.jpg?w=200",
+    "title": "گوشی آیفون 13 مینی اپل",
+    "titleEn": "Apple iPhone 13 mini",
+    "price": 50700000
+  },
+  {
+    "type": "laptop",
+    "rate": 9,
+    "href": "/product/apple-macbook-pro-16-2021-m1-pro-max-32gb-1tb/",
+    "src": "https://cdn01.zoomit.ir/2021/10/macbook-pro-16-inch-front.jpg?w=200",
+    "title": "لپ تاپ مک بوک پرو 16 اینچی 2021 اپل - M1 Max 32GB 1TB",
+    "titleEn": "Apple MacBook Pro 16 2021 M1 Max",
+    "price": 128000000
+  },
+  {
+    "type": "laptop",
+    "rate": 6,
+    "href": "/product/apple-macbook-pro-14-2021-m1-pro-16gb-512gb/",
+    "src": "https://cdn01.zoomit.ir/2021/10/macbook-pro-14-inch-front.jpg?w=200",
+    "title": "لپ تاپ مک بوک پرو 14 اینچی 2021 اپل - M1 Pro 16GB 512GB",
+    "titleEn": "Apple MacBook Pro 14 2021 M1 Pro",
+    "price": 84000000
+  },
+
+  {
+    "type": "laptop",
+    "rate": 7,
+    "href": "/product/apple-macbook-pro-13-2022-m2-8gb-256gb/",
+    "src": "https://cdn01.zoomit.ir/2022/6/apple-macbook-pro-m2-silver.jpg?w=200",
+    "title": "لپ تاپ مک بوک پرو 13 اینچی 2022 اپل - M2 8GB 256GB",
+    "titleEn": "Apple MacBook Pro 13 2022 M2",
+    "price": 54000000
+  },
+  {
+    "type": "laptop",
+    "rate": 8,
+    "href": "/product/macbook-air-2022-m2-m2-8gb-512gb/",
+    "src": "https://cdn01.zoomit.ir/2022/6/apple-macbook-air-m2-midnight.jpg?w=200",
+    "title": "لپ تاپ مک بوک ایر 2022 اپل - M2 8GB 512GB",
+    "titleEn": "Apple MacBook Air 2022 M2",
+    "price": 66787000
+  },
+  {
+    "type": "laptop",
+    "rate": 7,
+    "href": "/product/asus-rog-zephyrus-s-gx701gx-core-i7-rtx-2080-24gb-1tb/",
+    "src": "https://cdn01.zoomit.ir/2019/7/028fd844-df6d-45dc-b84e-2180c5baa471.jpg?w=260",
+    "title": " لپ تاپ ROG Zephyrus S GX701GX ایسوس - Core i7 RTX 2080 24GB",
+    "titleEn": "ASUS ROG Zephyrus S GX701GX",
+    "price": 0
+  }
+]

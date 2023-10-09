@@ -24,7 +24,7 @@
           </button>
           <ul class="flex items-center relative list-none py-2">
             <router-link
-              :to="{ name: 'home' }"
+              :to="{ name: 'product' }"
               @mousemove="hoverSubmenuIndex = 0"
               @mouseleave="hoverSubmenuIndex = -1"
               :class="{ active: hoverSubmenuIndex == 0 }"
@@ -51,8 +51,14 @@
                       v-for="item in submenuItems0"
                       :key="item"
                     >
-                      <a :href="item.href"
-                        ><span> {{ item.title }} </span></a
+                      <router-link
+                        :to="{
+                          name: 'productItem',
+                          params: { item: item.href },
+                          force: true,
+                          state: { productItemName: item.title }
+                        }"
+                        ><span> {{ item.title }} </span></router-link
                       >
                     </div>
                   </div>
@@ -248,17 +254,15 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import submenuItems0Array from '../assets/jsons/submenuItems0Array.json'
-import submenuItems1Array from '../assets/jsons/submenuItems1Array.json'
-import submenuItems5Array from '../assets/jsons/submenuItems5Array.json'
+import submenuItems0 from '../assets/jsons/SubmenuItems0Array.json'
+import submenuItems1 from '../assets/jsons/SubmenuItems1Array.json'
+import submenuItems5 from '../assets/jsons/SubmenuItems5Array.json'
 import useThemeStore from '../stores/theme'
 
 const transparentHeader = ref(true)
 const theme = ref('light')
 const hoverSubmenuIndex = ref(-1)
-const submenuItems0 = submenuItems0Array
-const submenuItems1 = submenuItems1Array
-const submenuItems5 = submenuItems5Array
+
 const themeStore = useThemeStore()
 
 watch(theme, (newThem) => {
